@@ -11,6 +11,27 @@ package sitedelivres;
 public class Utilisateur extends Personne {
     protected String idUtilisateur;
     protected int motPasse;
+
+    public Utilisateur() {
+    }
+
+    public Utilisateur(String idUtilisateur, int motPasse) {
+        this.idUtilisateur = idUtilisateur;
+        this.motPasse = motPasse;
+    }
+
+    public Utilisateur(String idUtilisateur, int motPasse, String nom) {
+        super(nom);
+        this.idUtilisateur = idUtilisateur;
+        this.motPasse = motPasse;
+    }
+
+    public Utilisateur(String idUtilisateur, int motPasse, String nom, String prenom) {
+        super(nom, prenom);
+        this.idUtilisateur = idUtilisateur;
+        this.motPasse = motPasse;
+    }
+    
     
 
     public String getIdUtilisateur() {

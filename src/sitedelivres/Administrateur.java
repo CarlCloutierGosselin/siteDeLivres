@@ -4,12 +4,17 @@
  */
 package sitedelivres;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author Carl
  */
 public class Administrateur extends Utilisateur{
     private int idAdministrateur;
+    private Set<Signalement>signalements=new HashSet(0);
+    
 
     public Administrateur() {
     }
@@ -25,6 +30,14 @@ public class Administrateur extends Utilisateur{
 
     public void setIdAdministrateur(int idAdministrateur) {
         this.idAdministrateur = idAdministrateur;
+    }
+
+    public Set<Signalement> getSignalements() {
+        return signalements;
+    }
+
+    public void setSignalements(Set<Signalement> signalements) {
+        this.signalements = signalements;
     }
     
     

@@ -5,6 +5,8 @@
 package sitedelivres;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -17,6 +19,9 @@ public class Membre extends Utilisateur {
       private String adresse;
       private String statut;
       private int nbSignalements;
+      private Set<Signalement>signalements=new HashSet(0);
+      
+      
       
       
 
@@ -66,6 +71,14 @@ public class Membre extends Utilisateur {
 
     public void setNbSignalements(int nbSignalements) {
         this.nbSignalements = nbSignalements;
+    }
+
+    public Set<Signalement> getSignalements() {
+        return signalements;
+    }
+
+    public void setSignalements(Set<Signalement> signalements) {
+        this.signalements = signalements;
     }
       
 

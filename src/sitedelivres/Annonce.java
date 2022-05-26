@@ -5,6 +5,8 @@
 package sitedelivres;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -14,6 +16,8 @@ public class Annonce {
     private int noAnnonceUnique;
     private Date datePublication;
     private String statut;
+    
+    private Set<Photo> photos=new HashSet(0);
 
     public Annonce() {
     }
@@ -48,6 +52,14 @@ public class Annonce {
 
     public void setStatut(String statut) {
         this.statut = statut;
+    }
+
+    public Set<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(Set<Photo> photos) {
+        this.photos = photos;
     }
     
     

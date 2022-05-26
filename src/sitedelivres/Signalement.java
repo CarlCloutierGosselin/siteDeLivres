@@ -15,6 +15,22 @@ public class Signalement {
     private Date dateSignalement;
     private String objet;
     private String conclusion;
+    private Administrateur administrateur;
+    private Membre membre;
+    
+    
+
+    public Signalement() {
+    }
+
+    public Signalement(int idSignalement, Date dateSignalement, String objet, String conclusion,Administrateur administrateur) {
+        this.idSignalement = idSignalement;
+        this.dateSignalement = dateSignalement;
+        this.objet = objet;
+        this.conclusion = conclusion;
+    }
+    
+    
 
     public int getIdSignalement() {
         return idSignalement;
@@ -46,6 +62,22 @@ public class Signalement {
 
     public void setConclusion(String conclusion) {
         this.conclusion = conclusion;
+    }
+
+    public Administrateur getAdministrateur() {
+        return administrateur;
+    }
+
+    public void setAdministrateur(Administrateur administrateur) {
+        this.administrateur = administrateur;
+    }
+
+    public Membre getMembre() {
+        return membre;
+    }
+
+    public void setMembre(Membre membre) {
+        this.membre = membre;
     }
  
 }

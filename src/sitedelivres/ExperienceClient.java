@@ -16,16 +16,21 @@ public class ExperienceClient {
     private String commentaire;
     private Date date;
     private boolean estAcheteurFinal;
+    private Utilisateur utilisateur;
+    private Annonce annonce;
+    
 
     public ExperienceClient() {
     }
 
-    public ExperienceClient(int noteLivre, int noteVendeur, String commentaire, Date date, boolean estAcheteurFinal) {
+    public ExperienceClient(int noteLivre, int noteVendeur, String commentaire, Date date, boolean estAcheteurFinal,Utilisateur utilisateur,Annonce annonce) {
         this.noteLivre = noteLivre;
         this.noteVendeur = noteVendeur;
         this.commentaire = commentaire;
         this.date = date;
         this.estAcheteurFinal = estAcheteurFinal;
+        this.utilisateur=utilisateur;
+        this.annonce=annonce;
     }
     
     
@@ -68,6 +73,22 @@ public class ExperienceClient {
 
     public void setEstAcheteurFinal(boolean estAcheteurFinal) {
         this.estAcheteurFinal = estAcheteurFinal;
+    }
+
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    public Annonce getAnnonce() {
+        return annonce;
+    }
+
+    public void setAnnonce(Annonce annonce) {
+        this.annonce = annonce;
     }
     
 }

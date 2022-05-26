@@ -14,15 +14,22 @@ public class Photo {
     private int id;
     private Date dateAjout;
     private String chemin;
+    
+    
+    private Annonce annonce;
+    
+    
 
     public Photo() {
     }
 
-    public Photo(int id, Date dateAjout, String chemin) {
+    public Photo(int id, Date dateAjout, String chemin,Annonce annonce) {
         this.id = id;
         this.dateAjout = dateAjout;
         this.chemin = chemin;
+        this.annonce=annonce;
     }
+    
     
     
 
@@ -48,6 +55,14 @@ public class Photo {
 
     public void setChemin(String chemin) {
         this.chemin = chemin;
+    }
+
+    public Annonce getAnnonce() {
+        return annonce;
+    }
+
+    public void setAnnonce(Annonce annonce) {
+        this.annonce = annonce;
     }
     
     
