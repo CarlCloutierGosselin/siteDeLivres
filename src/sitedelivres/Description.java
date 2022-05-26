@@ -6,10 +6,8 @@ package sitedelivres;
 
 /**
  *
- * @author Carl
+ * @author Admin
  */
-public class Membre extends Utilisateur {
-      
-    
+public class Description {
     
 }
