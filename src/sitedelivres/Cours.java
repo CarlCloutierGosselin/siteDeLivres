@@ -9,5 +9,43 @@ package sitedelivres;
  * @author Admin
  */
 public class Cours {
+    private String titre;
+    private String sigle;
+    private String description;
+
+    public Cours() {
+    }
+
+    public Cours(String titre, String sigle, String description) {
+        this.titre = titre;
+        this.sigle = sigle;
+        this.description = description;
+    }
+    
+    
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getSigle() {
+        return sigle;
+    }
+
+    public void setSigle(String sigle) {
+        this.sigle = sigle;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     
 }
