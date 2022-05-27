@@ -18,10 +18,20 @@ public class Membre extends Utilisateur {
     private String couriel;
     private int numeroTelephone;
     private String adresse;
-    private String statut;
     private int nbSignalements;
+    private StatutMembre statut;
     private Set<Signalement> signalements = new HashSet(0);
     private Set<Annonce> annonces = new HashSet(0);
+
+    public Membre(Date dateInscription, String couriel, int numeroTelephone, String adresse, int nbSignalements, StatutMembre statut, String idUtilisateur, int motPasse, String nom, String prenom) {
+        super(idUtilisateur, motPasse, nom, prenom);
+        this.dateInscription = dateInscription;
+        this.couriel = couriel;
+        this.numeroTelephone = numeroTelephone;
+        this.adresse = adresse;
+        this.nbSignalements = nbSignalements;
+        this.statut = statut;
+    }
 
     public Date getDateInscription() {
         return dateInscription;
@@ -55,11 +65,11 @@ public class Membre extends Utilisateur {
         this.adresse = adresse;
     }
 
-    public String getStatut() {
+    public StatutMembre getStatut() {
         return statut;
     }
 
-    public void setStatut(String statut) {
+    public void setStatut(StatutMembre statut) {
         this.statut = statut;
     }
 

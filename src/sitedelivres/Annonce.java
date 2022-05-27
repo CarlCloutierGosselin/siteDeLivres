@@ -16,7 +16,7 @@ public class Annonce {
 
     private int noAnnonceUnique;
     private Date datePublication;
-    private String statut;
+    private StatutAnnonce statut;
     private Membre membre;
 
     private Set<Photo> photos = new HashSet(0);
@@ -25,7 +25,7 @@ public class Annonce {
     public Annonce() {
     }
 
-    public Annonce(int noAnnonceUnique, Date datePublication, String statut, Membre membre) {
+    public Annonce(int noAnnonceUnique, Date datePublication, StatutAnnonce statut, Membre membre) {
         this.noAnnonceUnique = noAnnonceUnique;
         this.datePublication = datePublication;
         this.statut = statut;
@@ -48,11 +48,11 @@ public class Annonce {
         this.datePublication = datePublication;
     }
 
-    public String getStatut() {
+    public StatutAnnonce getStatut() {
         return statut;
     }
 
-    public void setStatut(String statut) {
+    public void setStatut(StatutAnnonce statut) {
         this.statut = statut;
     }
 
