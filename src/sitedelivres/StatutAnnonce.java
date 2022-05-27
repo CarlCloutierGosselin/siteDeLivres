@@ -9,5 +9,5 @@ package sitedelivres;
  * @author Admin
  */
 public enum StatutAnnonce {
-
+    PUBLIEE, ENEVALUATION, DESACTIVEE
 }

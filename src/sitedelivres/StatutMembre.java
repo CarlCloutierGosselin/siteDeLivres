@@ -9,5 +9,5 @@ package sitedelivres;
  * @author Admin
  */
 public enum StatutMembre {
-
+    ACTIF, INACTIF, ENATTENTE, BANNI
 }
