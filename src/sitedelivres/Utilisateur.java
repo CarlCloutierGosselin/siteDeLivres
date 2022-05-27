@@ -9,6 +9,7 @@ package sitedelivres;
  * @author Carl
  */
 public class Utilisateur extends Personne {
+
     protected String idUtilisateur;
     protected int motPasse;
 
@@ -31,8 +32,6 @@ public class Utilisateur extends Personne {
         this.idUtilisateur = idUtilisateur;
         this.motPasse = motPasse;
     }
-    
-    
 
     public String getIdUtilisateur() {
         return idUtilisateur;
@@ -49,6 +48,5 @@ public class Utilisateur extends Personne {
     public void setMotPasse(int motPasse) {
         this.motPasse = motPasse;
     }
-    
-    
+
 }

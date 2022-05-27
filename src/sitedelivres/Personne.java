@@ -9,6 +9,7 @@ package sitedelivres;
  * @author Carl
  */
 public class Personne {
+
     protected String nom;
     protected String prenom;
 
@@ -23,8 +24,6 @@ public class Personne {
         this.nom = nom;
         this.prenom = prenom;
     }
-    
-    
 
     public String getNom() {
         return nom;
@@ -41,6 +40,5 @@ public class Personne {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-    
-    
+
 }

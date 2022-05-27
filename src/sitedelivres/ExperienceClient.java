@@ -11,6 +11,7 @@ import java.util.Date;
  * @author Carl
  */
 public class ExperienceClient {
+
     private int noteLivre;
     private int noteVendeur;
     private String commentaire;
@@ -18,22 +19,19 @@ public class ExperienceClient {
     private boolean estAcheteurFinal;
     private Utilisateur utilisateur;
     private Annonce annonce;
-    
 
     public ExperienceClient() {
     }
 
-    public ExperienceClient(int noteLivre, int noteVendeur, String commentaire, Date date, boolean estAcheteurFinal,Utilisateur utilisateur,Annonce annonce) {
+    public ExperienceClient(int noteLivre, int noteVendeur, String commentaire, Date date, boolean estAcheteurFinal, Utilisateur utilisateur, Annonce annonce) {
         this.noteLivre = noteLivre;
         this.noteVendeur = noteVendeur;
         this.commentaire = commentaire;
         this.date = date;
         this.estAcheteurFinal = estAcheteurFinal;
-        this.utilisateur=utilisateur;
-        this.annonce=annonce;
+        this.utilisateur = utilisateur;
+        this.annonce = annonce;
     }
-    
-    
 
     public int getNoteLivre() {
         return noteLivre;
@@ -90,5 +88,5 @@ public class ExperienceClient {
     public void setAnnonce(Annonce annonce) {
         this.annonce = annonce;
     }
-    
+
 }

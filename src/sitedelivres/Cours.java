@@ -9,6 +9,7 @@ package sitedelivres;
  * @author Admin
  */
 public class Cours {
+
     private String titre;
     private String sigle;
     private String description;
@@ -21,8 +22,6 @@ public class Cours {
         this.sigle = sigle;
         this.description = description;
     }
-    
-    
 
     public String getTitre() {
         return titre;
@@ -47,5 +46,5 @@ public class Cours {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
 }

@@ -9,8 +9,9 @@ package sitedelivres;
  * @author Admin
  */
 public class Categorie {
+
     private int noCategorieUnique;
-    private String nom; 
+    private String nom;
 
     public Categorie() {
     }
@@ -20,8 +21,6 @@ public class Categorie {
         this.nom = nom;
     }
 
-    
-    
     public int getNoCategorieUnique() {
         return noCategorieUnique;
     }
@@ -37,5 +36,5 @@ public class Categorie {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
 }

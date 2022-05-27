@@ -11,6 +11,7 @@ import java.util.Date;
  * @author Admin
  */
 public class Signalement {
+
     private int idSignalement;
     private Date dateSignalement;
     private String objet;
@@ -18,21 +19,17 @@ public class Signalement {
     private Administrateur administrateur;
     private Annonce annonce;
     private Membre membre;
-    
-    
 
     public Signalement() {
     }
 
-    public Signalement(int idSignalement, Date dateSignalement, String objet, String conclusion,Annonce annonce,Administrateur administrateur) {
+    public Signalement(int idSignalement, Date dateSignalement, String objet, String conclusion, Annonce annonce, Administrateur administrateur) {
         this.idSignalement = idSignalement;
         this.dateSignalement = dateSignalement;
         this.objet = objet;
         this.conclusion = conclusion;
         this.annonce = annonce;
     }
-    
-    
 
     public int getIdSignalement() {
         return idSignalement;
@@ -89,5 +86,5 @@ public class Signalement {
     public void setAnnonce(Annonce annonce) {
         this.annonce = annonce;
     }
- 
+
 }

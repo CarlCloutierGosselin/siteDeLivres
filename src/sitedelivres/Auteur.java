@@ -8,13 +8,13 @@ package sitedelivres;
  *
  * @author Carl
  */
-public class Auteur extends Personne{
+public class Auteur extends Personne {
+
     private String note;
     private String bibliographie;
 
     public Auteur() {
     }
-    
 
     public String getNote() {
         return note;
@@ -31,6 +31,5 @@ public class Auteur extends Personne{
     public void setBibliographie(String bibliographie) {
         this.bibliographie = bibliographie;
     }
-    
-    
+
 }

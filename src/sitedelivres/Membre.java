@@ -13,15 +13,16 @@ import java.util.Set;
  * @author Carl
  */
 public class Membre extends Utilisateur {
-      private Date dateInscription;
-      private String couriel;
-      private int numeroTelephone;
-      private String adresse;
-      private String statut;
-      private int nbSignalements;
-      private Set<Signalement>signalements=new HashSet(0);
-      private Set<Annonce> annonces = new HashSet(0);
-      
+
+    private Date dateInscription;
+    private String couriel;
+    private int numeroTelephone;
+    private String adresse;
+    private String statut;
+    private int nbSignalements;
+    private Set<Signalement> signalements = new HashSet(0);
+    private Set<Annonce> annonces = new HashSet(0);
+
     public Date getDateInscription() {
         return dateInscription;
     }
@@ -85,6 +86,5 @@ public class Membre extends Utilisateur {
     public void setAnnonces(Set<Annonce> annonces) {
         this.annonces = annonces;
     }
-      
 
 }

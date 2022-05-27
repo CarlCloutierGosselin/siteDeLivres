@@ -11,10 +11,10 @@ import java.util.Set;
  *
  * @author Carl
  */
-public class Administrateur extends Utilisateur{
+public class Administrateur extends Utilisateur {
+
     private int idAdministrateur;
-    private Set<Signalement>signalements=new HashSet(0);
-    
+    private Set<Signalement> signalements = new HashSet(0);
 
     public Administrateur() {
     }
@@ -22,7 +22,6 @@ public class Administrateur extends Utilisateur{
     public Administrateur(int idAdministrateur) {
         this.idAdministrateur = idAdministrateur;
     }
-    
 
     public int getIdAdministrateur() {
         return idAdministrateur;
@@ -39,6 +38,5 @@ public class Administrateur extends Utilisateur{
     public void setSignalements(Set<Signalement> signalements) {
         this.signalements = signalements;
     }
-    
-    
+
 }

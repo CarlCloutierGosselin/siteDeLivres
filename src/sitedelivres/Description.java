@@ -9,22 +9,22 @@ package sitedelivres;
  * @author Admin
  */
 public class Description {
+
     private String etat;
     private float prix;
     private String resume;
     private Annonce annonce;
     private Livre livre;
-    
 
     public Description() {
     }
 
-    public Description(String etat, float prix, String resume,Annonce annonce,Livre livre) {
+    public Description(String etat, float prix, String resume, Annonce annonce, Livre livre) {
         this.etat = etat;
         this.prix = prix;
         this.resume = resume;
-        this.annonce=annonce;
-        this.livre=livre;
+        this.annonce = annonce;
+        this.livre = livre;
     }
 
     public String getEtat() {
@@ -67,5 +67,4 @@ public class Description {
         this.livre = livre;
     }
 
-    
 }

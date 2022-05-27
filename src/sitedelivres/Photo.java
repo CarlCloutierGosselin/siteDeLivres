@@ -11,27 +11,22 @@ import java.util.Date;
  * @author Admin
  */
 public class Photo {
+
     private int id;
     private Date dateAjout;
     private String chemin;
-    
-    
+
     private Annonce annonce;
-    
-    
 
     public Photo() {
     }
 
-    public Photo(int id, Date dateAjout, String chemin,Annonce annonce) {
+    public Photo(int id, Date dateAjout, String chemin, Annonce annonce) {
         this.id = id;
         this.dateAjout = dateAjout;
         this.chemin = chemin;
-        this.annonce=annonce;
+        this.annonce = annonce;
     }
-    
-    
-    
 
     public int getId() {
         return id;
@@ -64,6 +59,5 @@ public class Photo {
     public void setAnnonce(Annonce annonce) {
         this.annonce = annonce;
     }
-    
-    
+
 }

@@ -9,6 +9,7 @@ package sitedelivres;
  * @author Admin
  */
 public class Livre {
+
     private int isbn;
     private String titre;
     private String sujet;
@@ -23,8 +24,6 @@ public class Livre {
         this.sujet = sujet;
         this.editeur = editeur;
     }
-    
-    
 
     public int getIsbn() {
         return isbn;
@@ -57,5 +56,5 @@ public class Livre {
     public void setEditeur(String editeur) {
         this.editeur = editeur;
     }
-    
+
 }
