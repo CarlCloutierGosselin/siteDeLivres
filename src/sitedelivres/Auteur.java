@@ -20,6 +20,12 @@ public class Auteur extends Personne {
     public Auteur() {
     }
 
+    public Auteur(String note, String bibliographie, String nom, String prenom) {
+        super(nom, prenom);
+        this.note = note;
+        this.bibliographie = bibliographie;
+    }
+
     public String getNote() {
         return note;
     }

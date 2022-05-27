@@ -19,6 +19,11 @@ public class Administrateur extends Utilisateur {
     public Administrateur() {
     }
 
+    public Administrateur(int idAdministrateur, String idUtilisateur, int motPasse, String nom, String prenom) {
+        super(idUtilisateur, motPasse, nom, prenom);
+        this.idAdministrateur = idAdministrateur;
+    }
+
     public Administrateur(int idAdministrateur) {
         this.idAdministrateur = idAdministrateur;
     }
