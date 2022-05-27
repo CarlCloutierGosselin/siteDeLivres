@@ -11,17 +11,17 @@ package sitedelivres;
 public class Utilisateur extends Personne {
 
     protected String idUtilisateur;
-    protected int motPasse;
+    protected String motPasse;
 
     public Utilisateur() {
     }
 
-    public Utilisateur(String idUtilisateur, int motPasse) {
+    public Utilisateur(String idUtilisateur, String motPasse) {
         this.idUtilisateur = idUtilisateur;
         this.motPasse = motPasse;
     }
 
-    public Utilisateur(String idUtilisateur, int motPasse, String nom, String prenom) {
+    public Utilisateur(String idUtilisateur, String motPasse, String nom, String prenom) {
         super(nom, prenom);
         this.idUtilisateur = idUtilisateur;
         this.motPasse = motPasse;
@@ -35,11 +35,11 @@ public class Utilisateur extends Personne {
         this.idUtilisateur = idUtilisateur;
     }
 
-    public int getMotPasse() {
+    public String getMotPasse() {
         return motPasse;
     }
 
-    public void setMotPasse(int motPasse) {
+    public void setMotPasse(String motPasse) {
         this.motPasse = motPasse;
     }
 

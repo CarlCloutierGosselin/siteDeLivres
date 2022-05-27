@@ -15,21 +15,20 @@ import java.util.Set;
 public class Membre extends Utilisateur {
 
     private Date dateInscription;
-    private String couriel;
-    private int numeroTelephone;
+    private String courriel;
+    private String numeroTelephone;
     private String adresse;
-    private int nbSignalements;
+    private int nbSignalements = 0;
     private StatutMembre statut;
     private Set<Signalement> signalements = new HashSet(0);
     private Set<Annonce> annonces = new HashSet(0);
 
-    public Membre(Date dateInscription, String couriel, int numeroTelephone, String adresse, int nbSignalements, StatutMembre statut, String idUtilisateur, int motPasse, String nom, String prenom) {
+    public Membre(Date dateInscription, String courriel, String numeroTelephone, String adresse, StatutMembre statut, String idUtilisateur, String motPasse, String nom, String prenom) {
         super(idUtilisateur, motPasse, nom, prenom);
         this.dateInscription = dateInscription;
-        this.couriel = couriel;
+        this.courriel = courriel;
         this.numeroTelephone = numeroTelephone;
         this.adresse = adresse;
-        this.nbSignalements = nbSignalements;
         this.statut = statut;
     }
 
@@ -41,19 +40,19 @@ public class Membre extends Utilisateur {
         this.dateInscription = dateInscription;
     }
 
-    public String getCouriel() {
-        return couriel;
+    public String getCourriel() {
+        return courriel;
     }
 
-    public void setCouriel(String couriel) {
-        this.couriel = couriel;
+    public void setCourriel(String courriel) {
+        this.courriel = courriel;
     }
 
-    public int getNumeroTelephone() {
+    public String getNumeroTelephone() {
         return numeroTelephone;
     }
 
-    public void setNumeroTelephone(int numeroTelephone) {
+    public void setNumeroTelephone(String numeroTelephone) {
         this.numeroTelephone = numeroTelephone;
     }
 
@@ -99,7 +98,7 @@ public class Membre extends Utilisateur {
 
     @Override
     public String toString() {
-        return "Membre{" + "dateInscription=" + dateInscription + ", couriel=" + couriel + ", numeroTelephone=" + numeroTelephone + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements + ", statut=" + statut + ", signalements=" + signalements + ", annonces=" + annonces + '}';
+        return "Membre{" + "dateInscription=" + dateInscription + ", couriel=" + courriel + ", numeroTelephone=" + numeroTelephone + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements + ", statut=" + statut + ", signalements=" + signalements + ", annonces=" + annonces + '}';
     }
 
 }

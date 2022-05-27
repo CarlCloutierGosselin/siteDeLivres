@@ -15,17 +15,15 @@ public class Administrateur extends Utilisateur {
 
     private int idAdministrateur;
     private Set<Signalement> signalements = new HashSet(0);
+    private static int nombreAdmin = 1;
+
+    public Administrateur(String idUtilisateur, String motPasse, String nom, String prenom) {
+        super(idUtilisateur, motPasse, nom, prenom);
+        this.idAdministrateur = nombreAdmin++;
+    }
 
     public Administrateur() {
-    }
-
-    public Administrateur(int idAdministrateur, String idUtilisateur, int motPasse, String nom, String prenom) {
-        super(idUtilisateur, motPasse, nom, prenom);
-        this.idAdministrateur = idAdministrateur;
-    }
-
-    public Administrateur(int idAdministrateur) {
-        this.idAdministrateur = idAdministrateur;
+        this.idAdministrateur = nombreAdmin++;
     }
 
     public int getIdAdministrateur() {
