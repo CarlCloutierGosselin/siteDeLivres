@@ -59,4 +59,9 @@ public class Cours {
         this.livres = livres;
     }
 
+    @Override
+    public String toString() {
+        return "Cours{" + "titre=" + titre + ", sigle=" + sigle + ", description=" + description + ", livres=" + livres + '}';
+    }
+
 }

@@ -97,4 +97,9 @@ public class Membre extends Utilisateur {
         this.annonces = annonces;
     }
 
+    @Override
+    public String toString() {
+        return "Membre{" + "dateInscription=" + dateInscription + ", couriel=" + couriel + ", numeroTelephone=" + numeroTelephone + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements + ", statut=" + statut + ", signalements=" + signalements + ", annonces=" + annonces + '}';
+    }
+
 }

@@ -80,4 +80,9 @@ public class Annonce {
         this.membre = membre;
     }
 
+    @Override
+    public String toString() {
+        return "Annonce{" + "noAnnonceUnique=" + noAnnonceUnique + ", datePublication=" + datePublication + ", statut=" + statut + ", membre=" + membre + ", photos=" + photos + ", signalements=" + signalements + '}';
+    }
+
 }

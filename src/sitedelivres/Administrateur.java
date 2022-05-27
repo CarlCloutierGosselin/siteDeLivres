@@ -44,4 +44,9 @@ public class Administrateur extends Utilisateur {
         this.signalements = signalements;
     }
 
+    @Override
+    public String toString() {
+        return "Administrateur{" + "idAdministrateur=" + idAdministrateur + ", signalements=" + signalements + '}';
+    }
+
 }

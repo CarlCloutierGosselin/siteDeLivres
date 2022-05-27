@@ -89,4 +89,9 @@ public class ExperienceClient {
         this.annonce = annonce;
     }
 
+    @Override
+    public String toString() {
+        return "ExperienceClient{" + "noteLivre=" + noteLivre + ", noteVendeur=" + noteVendeur + ", commentaire=" + commentaire + ", date=" + date + ", estAcheteurFinal=" + estAcheteurFinal + ", utilisateur=" + utilisateur + ", annonce=" + annonce + '}';
+    }
+
 }

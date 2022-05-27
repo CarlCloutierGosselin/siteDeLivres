@@ -21,12 +21,6 @@ public class Utilisateur extends Personne {
         this.motPasse = motPasse;
     }
 
-    public Utilisateur(String idUtilisateur, int motPasse, String nom) {
-        super(nom);
-        this.idUtilisateur = idUtilisateur;
-        this.motPasse = motPasse;
-    }
-
     public Utilisateur(String idUtilisateur, int motPasse, String nom, String prenom) {
         super(nom, prenom);
         this.idUtilisateur = idUtilisateur;
@@ -47,6 +41,11 @@ public class Utilisateur extends Personne {
 
     public void setMotPasse(int motPasse) {
         this.motPasse = motPasse;
+    }
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" + "idUtilisateur=" + idUtilisateur + ", motPasse=" + motPasse + '}';
     }
 
 }

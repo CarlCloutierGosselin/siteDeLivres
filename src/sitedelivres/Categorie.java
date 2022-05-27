@@ -67,4 +67,9 @@ public class Categorie {
         this.categorieMere = categorieMere;
     }
 
+    @Override
+    public String toString() {
+        return "Categorie{" + "noCategorieUnique=" + noCategorieUnique + ", nom=" + nom + ", livres=" + livres + ", sousCategories=" + sousCategories + ", categorieMere=" + categorieMere + '}';
+    }
+
 }

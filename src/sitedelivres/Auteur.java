@@ -50,4 +50,9 @@ public class Auteur extends Personne {
         this.livres = livres;
     }
 
+    @Override
+    public String toString() {
+        return "Auteur{" + "note=" + note + ", bibliographie=" + bibliographie + ", livres=" + livres + '}';
+    }
+
 }

@@ -67,4 +67,9 @@ public class Description {
         this.livre = livre;
     }
 
+    @Override
+    public String toString() {
+        return "Description{" + "etat=" + etat + ", prix=" + prix + ", resume=" + resume + ", annonce=" + annonce + ", livre=" + livre + '}';
+    }
+
 }

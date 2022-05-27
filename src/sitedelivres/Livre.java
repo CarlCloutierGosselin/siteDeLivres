@@ -88,4 +88,9 @@ public class Livre {
         this.categorie = categorie;
     }
 
+    @Override
+    public String toString() {
+        return "Livre{" + "isbn=" + isbn + ", titre=" + titre + ", sujet=" + sujet + ", editeur=" + editeur + ", categorie=" + categorie + ", auteurs=" + auteurs + ", cours=" + cours + '}';
+    }
+
 }
