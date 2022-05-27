@@ -4,6 +4,9 @@
  */
 package sitedelivres;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author Carl
@@ -12,6 +15,7 @@ public class Auteur extends Personne {
 
     private String note;
     private String bibliographie;
+    private Set<Livre> livres = new HashSet(0);
 
     public Auteur() {
     }
@@ -30,6 +34,14 @@ public class Auteur extends Personne {
 
     public void setBibliographie(String bibliographie) {
         this.bibliographie = bibliographie;
+    }
+
+    public Set<Livre> getLivres() {
+        return livres;
+    }
+
+    public void setLivres(Set<Livre> livres) {
+        this.livres = livres;
     }
 
 }

@@ -25,10 +25,11 @@ public class Annonce {
     public Annonce() {
     }
 
-    public Annonce(int noAnnonceUnique, Date datePublication, String statut) {
+    public Annonce(int noAnnonceUnique, Date datePublication, String statut, Membre membre) {
         this.noAnnonceUnique = noAnnonceUnique;
         this.datePublication = datePublication;
         this.statut = statut;
+        this.membre = membre;
     }
 
     public int getNoAnnonceUnique() {

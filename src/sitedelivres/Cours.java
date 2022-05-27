@@ -4,6 +4,9 @@
  */
 package sitedelivres;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author Admin
@@ -13,6 +16,7 @@ public class Cours {
     private String titre;
     private String sigle;
     private String description;
+    private Set<Livre> livres = new HashSet(0);
 
     public Cours() {
     }
@@ -45,6 +49,14 @@ public class Cours {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Livre> getLivres() {
+        return livres;
+    }
+
+    public void setLivres(Set<Livre> livres) {
+        this.livres = livres;
     }
 
 }
