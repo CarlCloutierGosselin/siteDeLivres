@@ -16,8 +16,10 @@ public class Annonce {
     private int noAnnonceUnique;
     private Date datePublication;
     private String statut;
+    private Membre membre;
     
     private Set<Photo> photos=new HashSet(0);
+    private Set<Signalement> signalements = new HashSet(0);
 
     public Annonce() {
     }
@@ -60,6 +62,22 @@ public class Annonce {
 
     public void setPhotos(Set<Photo> photos) {
         this.photos = photos;
+    }
+
+    public Set<Signalement> getSignalements() {
+        return signalements;
+    }
+
+    public void setSignalements(Set<Signalement> signalements) {
+        this.signalements = signalements;
+    }
+
+    public Membre getMembre() {
+        return membre;
+    }
+
+    public void setMembre(Membre membre) {
+        this.membre = membre;
     }
     
     

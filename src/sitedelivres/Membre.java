@@ -20,11 +20,8 @@ public class Membre extends Utilisateur {
       private String statut;
       private int nbSignalements;
       private Set<Signalement>signalements=new HashSet(0);
+      private Set<Annonce> annonces = new HashSet(0);
       
-      
-      
-      
-
     public Date getDateInscription() {
         return dateInscription;
     }
@@ -79,6 +76,14 @@ public class Membre extends Utilisateur {
 
     public void setSignalements(Set<Signalement> signalements) {
         this.signalements = signalements;
+    }
+
+    public Set<Annonce> getAnnonces() {
+        return annonces;
+    }
+
+    public void setAnnonces(Set<Annonce> annonces) {
+        this.annonces = annonces;
     }
       
 
