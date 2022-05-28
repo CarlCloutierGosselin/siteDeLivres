@@ -25,15 +25,22 @@ public class SiteDeLivres {
         membre3.authentifier("transman", "cis");
         
         Categorie cat1 = new Categorie("Animaux de compagnie");
+        Categorie sousCat1=new Categorie("chat");
+        Categorie sousCat2=new Categorie("chien");
+        sousCat1.setCategorieMere(cat1);
+        sousCat2.setCategorieMere(cat1);
+        
 
         Auteur auteur1 = new Auteur(5, "Woman", "Cat");
 
-        Livre livre1 = new Livre(555, "How I met your kitten", "Cats", "Catnip society", cat1);
-        Livre livre2 = new Livre(556, "Horrible dogs", "Dog's habbits", "Catnip society", cat1);
+        Livre livre1 = new Livre(555, "How I met your kitten", "Cats", "Catnip society", sousCat1);
+        Livre livre2 = new Livre(556, "Horrible dogs", "Dog's habbits", "Catnip society", sousCat2);
         livre1.getAuteurs().add(auteur1);
         livre2.getAuteurs().add(auteur1);
-        auteur1.getLivres().add(livre1);
-        auteur1.getLivres().add(livre2);
+        auteur1.getBibliographie().add(livre1);
+        auteur1.getBibliographie().add(livre2);
+        sousCat1.getLivres().add(livre1);
+        sousCat2.getLivres().add(livre2);
 
         Photo photo1 = new Photo(new Date(), "https://petitchatton.org/chatton109", null);
         Photo photo2 = new Photo(new Date(), "https://petitchien.gg/snoopdog", null);
@@ -67,8 +74,8 @@ public class SiteDeLivres {
         System.out.println(membre4);
         System.out.println(membre5);
 
-        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs());
-        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs());
+        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs()+"categorie="+desc1.getLivre().getCategorie());
+        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs()+"categorie="+desc2.getLivre().getCategorie());
     
         System.out.println(annonce1);
         

@@ -6,7 +6,7 @@ import java.util.Set;
 public class Auteur extends Personne {
 
     private int note;
-    private Set<Livre> livres = new HashSet(0);
+    private Set<Livre> bibliographie = new HashSet(0);
 
     public Auteur() {
     }
@@ -24,12 +24,12 @@ public class Auteur extends Personne {
         this.note = note;
     }
 
-    public Set<Livre> getLivres() {
-        return livres;
+    public Set<Livre> getBibliographie() {
+        return bibliographie;
     }
 
-    public void setLivres(Set<Livre> livres) {
-        this.livres = livres;
+    public void setBibliographie(Set<Livre> Bibliographie) {
+        this.bibliographie = Bibliographie;
     }
 
     @Override

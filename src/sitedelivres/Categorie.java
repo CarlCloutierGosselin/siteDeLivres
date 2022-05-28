@@ -10,7 +10,7 @@ public class Categorie {
     private Set<Livre> livres = new HashSet(0);
     private Set<Categorie> sousCategories = new HashSet(0);
     private Categorie categorieMere;
-    
+
     private static int nbCategorie = 1;
 
     public Categorie() {
@@ -22,12 +22,8 @@ public class Categorie {
         this.nom = nom;
     }
 
-    public int getNoCategorieUnique() {
+    public int getNoCategorie() {
         return noCategorie;
-    }
-
-    public void setNoCategorieUnique(int noCategorieUnique) {
-        this.noCategorie = noCategorieUnique;
     }
 
     public String getNom() {
@@ -60,6 +56,7 @@ public class Categorie {
 
     public void setCategorieMere(Categorie categorieMere) {
         this.categorieMere = categorieMere;
+        categorieMere.getSousCategories().add(this);
     }
 
     @Override
