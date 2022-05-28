@@ -1,22 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package sitedelivres;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author Carl
- */
 public class SiteDeLivres {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Administrateur admin1 = new Administrateur("admin001","qwerty", "Poitra", "Robert");
         Administrateur admin2 = new Administrateur("admin002","12345", "Wayne", "Bruce");
