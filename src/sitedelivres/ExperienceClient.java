@@ -91,7 +91,7 @@ public class ExperienceClient {
 
     @Override
     public String toString() {
-        return "ExperienceClient{" + "noteLivre=" + noteLivre + ", noteVendeur=" + noteVendeur + ", commentaire=" + commentaire + ", date=" + date + ", estAcheteurFinal=" + estAcheteurFinal + ", utilisateur=" + utilisateur + ", annonce=" + annonce + '}';
+        return "ExperienceClient{" + "noteLivre=" + noteLivre + ", noteVendeur=" + noteVendeur + ", commentaire=" + commentaire + ", date=" + date + ", estAcheteurFinal=" + estAcheteurFinal + ", utilisateur=" + utilisateur.getNom() + ", annonce=" + annonce.getNoAnnonce() + '}';
     }
 
 }

@@ -14,7 +14,8 @@ import java.util.Set;
  */
 public class Annonce {
 
-    private int noAnnonceUnique;
+    private static int nombreAnnonce = 1;
+    private int noAnnonce;
     private Date datePublication;
     private StatutAnnonce statut;
     private Membre membre;
@@ -23,21 +24,23 @@ public class Annonce {
     private Set<Signalement> signalements = new HashSet(0);
 
     public Annonce() {
+        this.noAnnonce = nombreAnnonce++;
     }
 
-    public Annonce(int noAnnonceUnique, Date datePublication, StatutAnnonce statut, Membre membre) {
-        this.noAnnonceUnique = noAnnonceUnique;
+    public Annonce(Date datePublication, StatutAnnonce statut, Membre membre) {
         this.datePublication = datePublication;
         this.statut = statut;
         this.membre = membre;
+        
+        this.noAnnonce = nombreAnnonce++;
     }
 
-    public int getNoAnnonceUnique() {
-        return noAnnonceUnique;
+    public int getNoAnnonce() {
+        return noAnnonce;
     }
 
-    public void setNoAnnonceUnique(int noAnnonceUnique) {
-        this.noAnnonceUnique = noAnnonceUnique;
+    public void setNoAnnonce(int noAnnonce) {
+        this.noAnnonce = noAnnonce;
     }
 
     public Date getDatePublication() {
@@ -82,7 +85,7 @@ public class Annonce {
 
     @Override
     public String toString() {
-        return "Annonce{" + "noAnnonceUnique=" + noAnnonceUnique + ", datePublication=" + datePublication + ", statut=" + statut + ", membre=" + membre + ", photos=" + photos + ", signalements=" + signalements + '}';
+        return "Annonce{" + "noAnnonceUnique=" + noAnnonce + ", datePublication=" + datePublication + ", statut=" + statut + ", membre=" + membre.getNom() + ", photos=" + photos + ", signalements=" + signalements + '}';
     }
 
 }

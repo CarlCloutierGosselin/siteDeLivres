@@ -32,6 +32,25 @@ public class Membre extends Utilisateur {
         this.statut = statut;
     }
 
+    public void publierAnnonce(Set<Description> descriptions, Set<Photo> photos) {
+        Annonce nouvelleAnnonce = new Annonce(new Date(), StatutAnnonce.PUBLIEE, this);
+        for (Description description : descriptions) {
+            description.setAnnonce(nouvelleAnnonce);
+        }
+        
+        for (Photo photo : photos) {
+            photo.setAnnonce(nouvelleAnnonce);
+        }
+        
+        nouvelleAnnonce.setPhotos(photos);
+        annonces.add(nouvelleAnnonce);
+
+    }
+
+    public void signalerAnnonce() {
+
+    }
+
     public Date getDateInscription() {
         return dateInscription;
     }

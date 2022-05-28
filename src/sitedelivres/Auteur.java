@@ -13,33 +13,23 @@ import java.util.Set;
  */
 public class Auteur extends Personne {
 
-    private String note;
-    private String bibliographie;
+    private int note;
     private Set<Livre> livres = new HashSet(0);
 
     public Auteur() {
     }
 
-    public Auteur(String note, String bibliographie, String nom, String prenom) {
+    public Auteur(int note, String nom, String prenom) {
         super(nom, prenom);
         this.note = note;
-        this.bibliographie = bibliographie;
     }
 
-    public String getNote() {
+    public int getNote() {
         return note;
     }
 
-    public void setNote(String note) {
+    public void setNote(int note) {
         this.note = note;
-    }
-
-    public String getBibliographie() {
-        return bibliographie;
-    }
-
-    public void setBibliographie(String bibliographie) {
-        this.bibliographie = bibliographie;
     }
 
     public Set<Livre> getLivres() {
@@ -52,7 +42,7 @@ public class Auteur extends Personne {
 
     @Override
     public String toString() {
-        return "Auteur{" + "note=" + note + ", bibliographie=" + bibliographie + ", livres=" + livres + '}';
+        return "Auteur{" + "note=" + note + ", livres=" + livres + '}';
     }
 
 }

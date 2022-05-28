@@ -13,26 +13,29 @@ import java.util.Set;
  */
 public class Categorie {
 
-    private int noCategorieUnique;
+    private int noCategorie;
     private String nom;
     private Set<Livre> livres = new HashSet(0);
     private Set<Categorie> sousCategories = new HashSet(0);
     private Categorie categorieMere;
+    
+    private static int nombreCategorie = 1;
 
     public Categorie() {
+        this.noCategorie = nombreCategorie++;
     }
 
-    public Categorie(int noCategorieUnique, String nom) {
-        this.noCategorieUnique = noCategorieUnique;
+    public Categorie(String nom) {
+        this.noCategorie = nombreCategorie++;
         this.nom = nom;
     }
 
     public int getNoCategorieUnique() {
-        return noCategorieUnique;
+        return noCategorie;
     }
 
     public void setNoCategorieUnique(int noCategorieUnique) {
-        this.noCategorieUnique = noCategorieUnique;
+        this.noCategorie = noCategorieUnique;
     }
 
     public String getNom() {
@@ -69,7 +72,7 @@ public class Categorie {
 
     @Override
     public String toString() {
-        return "Categorie{" + "noCategorieUnique=" + noCategorieUnique + ", nom=" + nom + ", livres=" + livres + ", sousCategories=" + sousCategories + ", categorieMere=" + categorieMere + '}';
+        return "Categorie{" + "noCategorieUnique=" + noCategorie + ", nom=" + nom + ", livres=" + livres + ", sousCategories=" + sousCategories + ", categorieMere=" + categorieMere.getNom() + '}';
     }
 
 }

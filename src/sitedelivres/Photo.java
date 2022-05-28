@@ -17,12 +17,14 @@ public class Photo {
     private String chemin;
 
     private Annonce annonce;
+    
+    private int nombrePhotos = 1;
 
     public Photo() {
     }
 
-    public Photo(int id, Date dateAjout, String chemin, Annonce annonce) {
-        this.id = id;
+    public Photo(Date dateAjout, String chemin, Annonce annonce) {
+        this.id = nombrePhotos++;
         this.dateAjout = dateAjout;
         this.chemin = chemin;
         this.annonce = annonce;
@@ -62,7 +64,7 @@ public class Photo {
 
     @Override
     public String toString() {
-        return "Photo{" + "id=" + id + ", dateAjout=" + dateAjout + ", chemin=" + chemin + ", annonce=" + annonce + '}';
+        return "Photo{" + "id=" + id + ", dateAjout=" + dateAjout + ", chemin=" + chemin + ", annonce=" + annonce.getNoAnnonce() + '}';
     }
 
 }

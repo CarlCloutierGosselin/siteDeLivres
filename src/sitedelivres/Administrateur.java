@@ -47,4 +47,6 @@ public class Administrateur extends Utilisateur {
         return "Administrateur{" + "idAdministrateur=" + idAdministrateur + ", signalements=" + signalements + '}';
     }
 
+    
+
 }
