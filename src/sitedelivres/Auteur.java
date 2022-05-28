@@ -42,7 +42,7 @@ public class Auteur extends Personne {
 
     @Override
     public String toString() {
-        return "Auteur{" + "note=" + note + ", livres=" + livres + '}';
+        return "Auteur{" + "nom=" + getNom() + ", note=" + note + '}';
     }
 
 }

@@ -72,7 +72,7 @@ public class Categorie {
 
     @Override
     public String toString() {
-        return "Categorie{" + "noCategorieUnique=" + noCategorie + ", nom=" + nom + ", livres=" + livres + ", sousCategories=" + sousCategories + ", categorieMere=" + categorieMere.getNom() + '}';
+        return "Categorie{" + "noCategorieUnique=" + noCategorie + ", nom=" + nom + ", livres=" + livres + '}';
     }
 
 }

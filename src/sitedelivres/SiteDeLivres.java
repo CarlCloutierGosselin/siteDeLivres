@@ -35,6 +35,10 @@ public class SiteDeLivres {
         
         Livre livre1 = new Livre(555, "How I met your kitten", "Cats", "Catnip society", cat1);
         Livre livre2 = new Livre(556, "Horrible dogs", "Dog's habbits", "Catnip society", cat1);
+        livre1.getAuteurs().add(auteur1);
+        livre2.getAuteurs().add(auteur1);
+        auteur1.getLivres().add(livre1);
+        auteur1.getLivres().add(livre2);
         
         Photo photo1 = new Photo(new Date(), "https://petitchatton.org/chatton109", null);
         Photo photo2 = new Photo(new Date(), "https://petitchien.gg/snoopdog", null);
@@ -62,8 +66,8 @@ public class SiteDeLivres {
         System.out.println(membre4);
         System.out.println(membre5);
         
-        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre());
-        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre());
+        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs());
+        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs());
     }
 
 }
