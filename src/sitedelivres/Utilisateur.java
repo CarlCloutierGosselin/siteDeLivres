@@ -4,6 +4,7 @@ public class Utilisateur extends Personne {
 
     protected String idUtilisateur;
     protected String motPasse;
+    protected boolean estAuthentifie = false;
 
     public Utilisateur() {
     }
@@ -17,6 +18,15 @@ public class Utilisateur extends Personne {
         super(nom, prenom);
         this.idUtilisateur = idUtilisateur;
         this.motPasse = motPasse;
+    }
+    
+    public void authentifier(String idUtilisateur, String motDePasse){
+        if (idUtilisateur == this.idUtilisateur && motDePasse == this.motPasse)
+            estAuthentifie = true;
+    }
+    
+    public void deconnection(){
+        estAuthentifie = false;
     }
 
     public String getIdUtilisateur() {

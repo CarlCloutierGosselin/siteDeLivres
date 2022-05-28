@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Signalement {
 
+    private static int nbSignalements = 1;
     private int idSignalement;
     private Date dateSignalement;
     private String objet;
@@ -13,22 +14,20 @@ public class Signalement {
     private Membre membre;
 
     public Signalement() {
+        idSignalement = nbSignalements++;
     }
 
-    public Signalement(int idSignalement, Date dateSignalement, String objet, String conclusion, Annonce annonce, Administrateur administrateur) {
-        this.idSignalement = idSignalement;
+    public Signalement(Date dateSignalement, String objet, String conclusion, Annonce annonce, Administrateur administrateur, Membre membre) {
+        idSignalement = nbSignalements++;
         this.dateSignalement = dateSignalement;
         this.objet = objet;
         this.conclusion = conclusion;
         this.annonce = annonce;
+        this.membre = membre;
     }
 
     public int getIdSignalement() {
         return idSignalement;
-    }
-
-    public void setIdSignalement(int idSignalement) {
-        this.idSignalement = idSignalement;
     }
 
     public Date getDateSignalement() {
@@ -81,7 +80,7 @@ public class Signalement {
 
     @Override
     public String toString() {
-        return "Signalement{" + "idSignalement=" + idSignalement + ", dateSignalement=" + dateSignalement + ", objet=" + objet + ", conclusion=" + conclusion + ", administrateur=" + administrateur.getNom() + ", annonce=" + annonce.getNoAnnonce() + ", membre=" + membre.getNom() + '}';
+        return "Signalement{" + "idSignalement=" + idSignalement + ", dateSignalement=" + dateSignalement + ", objet=" + objet + ", conclusion=" + conclusion + ", annonce=" + annonce.getNoAnnonce() + ", membre=" + membre.getNom() + '}';
     }
 
 }

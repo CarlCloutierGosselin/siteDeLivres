@@ -24,25 +24,45 @@ public class Membre extends Utilisateur {
         this.statut = statut;
     }
 
-    public void publierAnnonce(Set<Description> descriptions, Set<Photo> photos) {
+    public Annonce publierAnnonce(Set<Description> descriptions, Set<Photo> photos) {
+        if (!this.estAuthentifie) {
+            System.out.println("Le membre doit être authentifié pour effectuer une publication");
+            return null;
+        }
+
         Annonce nouvelleAnnonce = new Annonce(new Date(), StatutAnnonce.PUBLIEE, this);
         for (Description description : descriptions) {
             description.setAnnonce(nouvelleAnnonce);
         }
-        
+
         for (Photo photo : photos) {
             photo.setAnnonce(nouvelleAnnonce);
         }
-        
+
         nouvelleAnnonce.setPhotos(photos);
         annonces.add(nouvelleAnnonce);
-
+        
+        return nouvelleAnnonce;
     }
 
-    public void signalerAnnonce() {
-
+    public Signalement signalerAnnonce(Annonce annonce, String objet) {
+        if (!this.estAuthentifie) {
+            System.out.println("Le membre doit être authentifié pour signaler une annonce");
+            return null;
+        }
+        
+        Signalement signalement = new Signalement(new Date(), objet, null, annonce, null, annonce.getMembre());
+        annonce.getSignalements().add(signalement);
+        
+        annonce.getMembre().ajouterSignalement();
+        
+        return signalement;
     }
 
+    public void ajouterSignalement(){
+        nbSignalements++;
+    }
+    
     public Date getDateInscription() {
         return dateInscription;
     }
