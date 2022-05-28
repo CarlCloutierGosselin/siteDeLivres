@@ -11,14 +11,14 @@ public class Categorie {
     private Set<Categorie> sousCategories = new HashSet(0);
     private Categorie categorieMere;
     
-    private static int nombreCategorie = 1;
+    private static int nbCategorie = 1;
 
     public Categorie() {
-        this.noCategorie = nombreCategorie++;
+        this.noCategorie = nbCategorie++;
     }
 
     public Categorie(String nom) {
-        this.noCategorie = nombreCategorie++;
+        this.noCategorie = nbCategorie++;
         this.nom = nom;
     }
 

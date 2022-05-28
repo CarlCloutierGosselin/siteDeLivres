@@ -10,13 +10,13 @@ public class Photo {
 
     private Annonce annonce;
     
-    private int nombrePhotos = 1;
+    private int nbPhotos = 1;
 
     public Photo() {
     }
 
     public Photo(Date dateAjout, String chemin, Annonce annonce) {
-        this.id = nombrePhotos++;
+        this.id = nbPhotos++;
         this.dateAjout = dateAjout;
         this.chemin = chemin;
         this.annonce = annonce;

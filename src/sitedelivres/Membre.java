@@ -8,18 +8,18 @@ public class Membre extends Utilisateur {
 
     private Date dateInscription;
     private String courriel;
-    private String numeroTelephone;
+    private String noTelephone;
     private String adresse;
     private int nbSignalements = 0;
     private StatutMembre statut;
     private Set<Signalement> signalements = new HashSet(0);
     private Set<Annonce> annonces = new HashSet(0);
 
-    public Membre(Date dateInscription, String courriel, String numeroTelephone, String adresse, StatutMembre statut, String idUtilisateur, String motPasse, String nom, String prenom) {
+    public Membre(Date dateInscription, String courriel, String noTelephone, String adresse, StatutMembre statut, String idUtilisateur, String motPasse, String nom, String prenom) {
         super(idUtilisateur, motPasse, nom, prenom);
         this.dateInscription = dateInscription;
         this.courriel = courriel;
-        this.numeroTelephone = numeroTelephone;
+        this.noTelephone = noTelephone;
         this.adresse = adresse;
         this.statut = statut;
     }
@@ -60,11 +60,11 @@ public class Membre extends Utilisateur {
     }
 
     public String getNumeroTelephone() {
-        return numeroTelephone;
+        return noTelephone;
     }
 
     public void setNumeroTelephone(String numeroTelephone) {
-        this.numeroTelephone = numeroTelephone;
+        this.noTelephone = numeroTelephone;
     }
 
     public String getAdresse() {
@@ -109,7 +109,7 @@ public class Membre extends Utilisateur {
 
     @Override
     public String toString() {
-        return "Membre{" + "dateInscription=" + dateInscription + ", couriel=" + courriel + ", numeroTelephone=" + numeroTelephone + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements + ", statut=" + statut + ", signalements=" + signalements + ", annonces=" + annonces + '}';
+        return "Membre{" + "dateInscription=" + dateInscription + ", couriel=" + courriel + ", numeroTelephone=" + noTelephone + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements + ", statut=" + statut + ", signalements=" + signalements + ", annonces=" + annonces + '}';
     }
 
 }

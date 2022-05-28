@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Annonce {
 
-    private static int nombreAnnonce = 1;
+    private static int nbAnnonces = 1;
     private int noAnnonce;
     private Date datePublication;
     private StatutAnnonce statut;
@@ -16,7 +16,7 @@ public class Annonce {
     private Set<Signalement> signalements = new HashSet(0);
 
     public Annonce() {
-        this.noAnnonce = nombreAnnonce++;
+        this.noAnnonce = nbAnnonces++;
     }
 
     public Annonce(Date datePublication, StatutAnnonce statut, Membre membre) {
@@ -24,7 +24,7 @@ public class Annonce {
         this.statut = statut;
         this.membre = membre;
         
-        this.noAnnonce = nombreAnnonce++;
+        this.noAnnonce = nbAnnonces++;
     }
 
     public int getNoAnnonce() {

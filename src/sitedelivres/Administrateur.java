@@ -7,15 +7,15 @@ public class Administrateur extends Utilisateur {
 
     private int idAdministrateur;
     private Set<Signalement> signalements = new HashSet(0);
-    private static int nombreAdmin = 1;
+    private static int nbAdmin = 1;
 
     public Administrateur(String idUtilisateur, String motPasse, String nom, String prenom) {
         super(idUtilisateur, motPasse, nom, prenom);
-        this.idAdministrateur = nombreAdmin++;
+        this.idAdministrateur = nbAdmin++;
     }
 
     public Administrateur() {
-        this.idAdministrateur = nombreAdmin++;
+        this.idAdministrateur = nbAdmin++;
     }
 
     public int getIdAdministrateur() {
