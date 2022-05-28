@@ -7,6 +7,8 @@ import java.util.Set;
 public class SiteDeLivres {
 
     public static void main(String[] args) {
+        Set<ExperienceClient> experiencesClient = new HashSet(0);
+        
         Administrateur admin1 = new Administrateur("admin001", "qwerty", "Poitra", "Robert");
         Administrateur admin2 = new Administrateur("admin002", "12345", "Wayne", "Bruce");
         Administrateur admin3 = new Administrateur("admin003", "love", "Password", "Login");
@@ -20,6 +22,7 @@ public class SiteDeLivres {
 
         membre1.authentifier("heman", "123");
         membre2.authentifier("shewoman", "qwerty");
+        membre3.authentifier("transman", "cis");
         
         Categorie cat1 = new Categorie("Animaux de compagnie");
 
@@ -50,6 +53,10 @@ public class SiteDeLivres {
 
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
 
+        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", annonce1);
+        
+        experiencesClient.add(exp1);
+        
         System.out.println(admin1);
         System.out.println(admin2);
         System.out.println(admin3);
@@ -66,6 +73,7 @@ public class SiteDeLivres {
         System.out.println(annonce1);
         
         System.out.println(signalement1);
+        
+        System.out.println(exp1);
     }
-
 }

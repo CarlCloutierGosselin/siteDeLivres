@@ -59,6 +59,17 @@ public class Membre extends Utilisateur {
         return signalement;
     }
 
+    public ExperienceClient commenterExperienceUtilisateur(int noteLivre, int noteVendeur, String commentaire, Annonce annonce){
+        if (!this.estAuthentifie) {
+            System.out.println("Le membre doit être authentifié pour commenter une experience client");
+            return null;
+        }
+        
+        ExperienceClient experienceClient = new ExperienceClient(noteLivre, noteVendeur, commentaire, new Date(), this, annonce);
+        
+        return experienceClient;
+    }
+    
     public void ajouterSignalement(){
         nbSignalements++;
     }
