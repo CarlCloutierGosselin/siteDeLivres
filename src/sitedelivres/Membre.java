@@ -108,7 +108,7 @@ public class Membre extends Utilisateur {
     public Set<Description> rechercherAnnonces(Set<Description> descriptions, Cours cours) {
         Set<Description> resultats = new HashSet(0);
         for (Description description : descriptions) {
-            if (description.getLivre().getCours() == cours
+            if (description.getLivre().getCours().contains(cours)
                     && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
                 resultats.add(description);
             }

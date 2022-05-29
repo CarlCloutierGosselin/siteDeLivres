@@ -22,66 +22,66 @@ public class SiteDeLivres {
         membre2.authentifier("shewoman", "qwerty");
         membre3.authentifier("transman", "cis");
 
-        //On crée des catégories et leurs sous catégories
+        //On cree des categories et leurs sous categories
         Categorie categAnimaux = new Categorie("Animaux de compagnie");
         Categorie categChat = new Categorie("chat");
         Categorie categChien = new Categorie("chien");
         categChat.setCategorieMere(categAnimaux);
         categChien.setCategorieMere(categAnimaux);
-        
-        Categorie categVehicule = new Categorie("Véhicules");
+
+        Categorie categVehicule = new Categorie("Vehicules");
         Categorie categMoto = new Categorie("Moto");
         Categorie categBus = new Categorie("Autobus");
         categMoto.setCategorieMere(categVehicule);
         categBus.setCategorieMere(categVehicule);
-        
-        Categorie categProg = new Categorie("Programmation"); 
-        
-        //On crée des auteurs
+
+        Categorie categProg = new Categorie("Programmation");
+
+        //On cree des auteurs
         Auteur auteur1 = new Auteur(5, "Woman", "Cat");
         Auteur auteur2 = new Auteur(4, "De Pise", "Bernard");
         Auteur auteur3 = new Auteur(1, "Tremblay", "Priscille");
 
-        //On crée des livres, et les associons avec leurs auteurs, et leur catégorie s'il y a lieu
+        //On cree des livres, et les associons avec leurs auteurs, et leur categorie s'il y a lieu
         Livre livre1 = new Livre(555, "How I met your kitten", "Cats", "Catnip society", null);
         livre1.ajouterAuteur(auteur1);
         livre1.setCategorie(categChat);
-        
+
         Livre livre2 = new Livre(556, "Horrible dogs", "Dog's habits", "Catnip society", null);
         livre2.ajouterAuteur(auteur1);
         livre2.setCategorie(categChien);
-        
-        Livre livre3 = new Livre(557, "Les transports en communs : L'autobus", "Statistiques concernant les autobus", "Editions sérieuses", null);
+
+        Livre livre3 = new Livre(557, "Les transports en communs : L'autobus", "Statistiques concernant les autobus", "Editions serieuses", null);
         livre3.ajouterAuteur(auteur2);
         livre3.ajouterAuteur(auteur3);
         livre3.setCategorie(categBus);
-        
-        Livre livre4 = new Livre(558, "Le guide de l'auto", "Comparaisons entre véhicules", "Editions sérieuses", null);
+
+        Livre livre4 = new Livre(558, "Le guide de l'auto", "Comparaisons entre vehicules", "Editions serieuses", null);
         livre4.ajouterAuteur(auteur3);
         livre4.setCategorie(categVehicule);
-        
-        Livre livre5 = new Livre(559, "La bible du C++", "Apprendre a coder", "Editions sérieuses", null);
+
+        Livre livre5 = new Livre(559, "La bible du C++", "Apprendre a coder", "Editions serieuses", null);
         livre5.ajouterAuteur(auteur3);
         livre5.setCategorie(categProg);
         //On ajoute des cours, et associons les livres qu'ils reiquierent
-        
+
         Cours vet = new Cours("Medecine veterinaire 101", "vet101", "Cours de base en medecine veterinaire");
         livre2.ajouterCours(vet);
         livre1.ajouterCours(vet);
 
-        Cours mecanique = new Cours("Mécanique 101", "mec101", "Cours de base en entretien automobile");
+        Cours mecanique = new Cours("Mecanique 101", "mec101", "Cours de base en entretien automobile");
         livre3.ajouterCours(mecanique);
         livre4.ajouterCours(mecanique);
-        
+
         Cours prog = new Cours("programmation 103", "prg103", "Cours de programmation intermediaire");
         livre5.ajouterCours(prog);
-        
-        //Création d'annonces test
+
+        //Creation d'annonces test
         Photo photo1 = new Photo(new Date(), "https://petitchatton.org/chatton109", null);
         Photo photo2 = new Photo(new Date(), "https://petitchien.gg/snoopdog", null);
 
         Description desc1 = new Description("Lamentable", 9.99f, "Étrange histoire de chat", null, livre1);
-        Description desc2 = new Description("Neuf", 5.99f, "Une personne détestant vraiment les chiens...", null, livre2);
+        Description desc2 = new Description("Neuf", 5.99f, "Une personne detestant vraiment les chiens...", null, livre2);
 
         Set<Photo> photos1 = new HashSet(0);
         photos1.add(photo1);
@@ -93,10 +93,10 @@ public class SiteDeLivres {
         descriptions.addAll(descriptions1);
 
         Annonce annonce1 = membre1.publierAnnonce(descriptions1, photos1);
-        
+
         System.out.println(annonce1);
-        
-        //Création d'une deuxième annonce
+
+        //Creation d'une deuxieme annonce
         Photo photo3 = new Photo(new Date(), "https://monbazou.org/char.png", null);
         Photo photo4 = new Photo(new Date(), "https://autobusdeville.gg/autobus.png", null);
 
@@ -113,10 +113,10 @@ public class SiteDeLivres {
         descriptions.addAll(descriptions2);
 
         Annonce annonce2 = membre1.publierAnnonce(descriptions2, photos2);
-        
+
         System.out.println(annonce2);
-        
-        //Création d'une deuxième annonce
+
+        //Creation d'une deuxieme annonce
         Photo photo5 = new Photo(new Date(), "https://imgstocklivre.org/biblbecplusplus.png", null);
 
         Description desc5 = new Description("Bien", 59.99f, "Bien, mais bof, on trouve tout en ligne", null, livre5);
@@ -131,30 +131,48 @@ public class SiteDeLivres {
         Annonce annonce3 = membre2.publierAnnonce(descriptions3, photos3);
         System.out.println(annonce3);
 
-        //on affiche la totalité des descriptions qui associent les annonces et les livres
-        for(Description desc : descriptions){
+        //on affiche la totalite des descriptions qui associent les annonces et les livres
+        for (Description desc : descriptions) {
             System.out.println(desc);
         }
-        
+
         //procedons a des recherches dans nos annonces
+        //Recherche par cours
         Set<Description> resultat1 = membre2.rechercherAnnonces(descriptions, vet);
-        System.out.println(resultat1);
+        System.out.println("Resultat des descriptions correspondant au cours: " + vet.getSigle() + "");
+        for (Description desc : resultat1) {
+            System.out.println("\t" + desc);
+        }
+
+        //Recherche par prix
+        System.out.println("Resultat des descriptions entre 10$ et 5000$");
+        Set<Description> resultat2 = membre2.rechercherAnnonces(descriptions, 10.00f, 5000.00f);
+        for(Description desc : resultat2){
+            System.out.println("\t" + desc);
+        }
         
+        //Recherche par Mot clé dans les titres
+        System.out.println("Resultat des descriptions ayant un livre comportant bible dans son titre");
+        Set<Description> resultat3 = membre3.rechercherAnnonces(descriptions, "bible");
+        for(Description desc : resultat3){
+            System.out.println("\t" + desc);
+        }
         
-        
+        //Recherche par categories
+        System.out.println("Resultat des descriptions ayant un livre de categorie: " + categChat.getNom());
+        Set<Description> resultat4 = membre3.rechercherAnnonces(descriptions, categChat);
+        for(Description desc : resultat4){
+            System.out.println("\t" + desc);
+        }
+
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
 
-        
-        
         //System.out.println(auteur1);
         //System.out.println(categBus);
         //System.out.println(vet);
         //System.out.println(mecanique);
         //System.out.println(desc1);
-
         //System.out.println(livre4);
-        
-        
 //        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
 //        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce1);
 //        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce1);
