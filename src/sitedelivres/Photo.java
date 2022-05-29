@@ -4,19 +4,17 @@ import java.util.Date;
 
 public class Photo {
 
-    private int id;
+    private static int id = 1;
     private Date dateAjout;
     private String chemin;
-
     private Annonce annonce;
-    
-    private int nbPhotos = 1;
 
     public Photo() {
+        Photo.id = id++;
     }
 
     public Photo(Date dateAjout, String chemin, Annonce annonce) {
-        this.id = nbPhotos++;
+        Photo.id = id++;
         this.dateAjout = dateAjout;
         this.chemin = chemin;
         this.annonce = annonce;
