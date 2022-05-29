@@ -89,28 +89,28 @@ public class SiteDeLivres {
 
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
 
-        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
-        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce1);
-        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce1);
-
-        experiencesClient.add(exp1);
-        experiencesClient.add(exp2);
-        experiencesClient.add(exp3);
-
-        System.out.println(membre1);
-        System.out.println(membre2);
-        System.out.println(membre3);
-        System.out.println(membre4);
-        System.out.println(membre5 + "\n");
-
-        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs() + desc1.getLivre().getCategorie());
-        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs() + desc2.getLivre().getCategorie() + "\n");
-
-        System.out.println(vet);
-
-        System.out.println(annonce1);
-
-        System.out.println(signalement1 + "\n");
+//        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
+//        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce1);
+//        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce1);
+//
+//        experiencesClient.add(exp1);
+//        experiencesClient.add(exp2);
+//        experiencesClient.add(exp3);
+//
+//        System.out.println(membre1);
+//        System.out.println(membre2);
+//        System.out.println(membre3);
+//        System.out.println(membre4);
+//        System.out.println(membre5 + "\n");
+//
+//        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs() + desc1.getLivre().getCategorie());
+//        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs() + desc2.getLivre().getCategorie() + "\n");
+//
+//        System.out.println(vet);
+//
+//        System.out.println(annonce1);
+//
+//        System.out.println(signalement1 + "\n");
 
         for (ExperienceClient exp : experiencesClient) {
             System.out.println(exp);
