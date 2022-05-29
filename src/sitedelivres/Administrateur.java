@@ -5,16 +5,17 @@ import java.util.Set;
 
 public class Administrateur extends Utilisateur {
 
-    private static int idAdministrateur = 1;
+    private int idAdministrateur;
     private Set<Signalement> signalements = new HashSet(0);
+    private static int nbAdmin = 1;
 
     public Administrateur(String idUtilisateur, String motPasse, String nom, String prenom) {
         super(idUtilisateur, motPasse, nom, prenom);
-        Administrateur.idAdministrateur = idAdministrateur++;
+        this.idAdministrateur = nbAdmin++;
     }
 
     public Administrateur() {
-        Administrateur.idAdministrateur = idAdministrateur++;
+        this.idAdministrateur = nbAdmin++;
     }
 
     public int getIdAdministrateur() {
@@ -22,7 +23,7 @@ public class Administrateur extends Utilisateur {
     }
 
     public void setIdAdministrateur(int idAdministrateur) {
-        Administrateur.idAdministrateur = idAdministrateur;
+        this.idAdministrateur = idAdministrateur;
     }
 
     public Set<Signalement> getSignalements() {

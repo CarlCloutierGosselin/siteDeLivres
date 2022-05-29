@@ -5,18 +5,19 @@ import java.util.Set;
 
 public class Categorie {
 
-    private static int noCategorie = 1;
+    private int noCategorie;
     private String nom;
     private Set<Livre> livres = new HashSet(0);
     private Set<Categorie> sousCategories = new HashSet(0);
     private Categorie categorieMere;
-
+    private static int nbCategories = 0;
+    
     public Categorie() {
-        Categorie.noCategorie = noCategorie++;
+        this.noCategorie = nbCategories++;
     }
 
     public Categorie(String nom) {
-        Categorie.noCategorie = noCategorie++;
+        this.noCategorie = nbCategories++;
         this.nom = nom;
     }
 

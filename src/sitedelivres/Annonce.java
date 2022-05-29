@@ -6,16 +6,18 @@ import java.util.Set;
 
 public class Annonce {
 
-    private static int noAnnonce = 1;
+    private int noAnnonce;
     private Date datePublication;
     private StatutAnnonce statut;
     private Membre membre;
 
+    private static int nbAnnonces = 1;
+    
     private Set<Photo> photos = new HashSet(0);
     private Set<Signalement> signalements = new HashSet(0);
 
     public Annonce() {
-        Annonce.noAnnonce = noAnnonce++;
+        this.noAnnonce = nbAnnonces++;
     }
 
     public Annonce(Date datePublication, StatutAnnonce statut, Membre membre) {
@@ -23,15 +25,15 @@ public class Annonce {
         this.statut = statut;
         this.membre = membre;
         
-        Annonce.noAnnonce = noAnnonce++;
+        this.noAnnonce = nbAnnonces++;
     }
 
     public int getNoAnnonce() {
         return noAnnonce;
     }
 
-    public void setNoAnnonce(int noAnnonce) {
-        Annonce.noAnnonce = noAnnonce;
+    public void setNoAnnonce(int nbAnnonces) {
+        this.noAnnonce = nbAnnonces;
     }
 
     public Date getDatePublication() {
@@ -76,7 +78,7 @@ public class Annonce {
 
     @Override
     public String toString() {
-        return "Annonce{" + "noAnnonceUnique=" + noAnnonce 
+        return "Annonce{" + "noAnnonce=" + noAnnonce 
                 + ", datePublication=" + datePublication 
                 + ", statut=" + statut + ", membre=" + membre.getNom() 
                 + ", photos=" + photos + ", signalements=" + signalements + '}';
