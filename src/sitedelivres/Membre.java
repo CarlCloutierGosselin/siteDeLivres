@@ -171,6 +171,8 @@ public class Membre extends Utilisateur {
             System.out.println("Le membre d'id=" + getIdUtilisateur() + " ne peut modifier que ses annonces");
         }
     }
+    
+    
 
     public void ajouterSignalement() {
         nbSignalements++;

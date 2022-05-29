@@ -1,6 +1,5 @@
 package sitedelivres;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -49,6 +48,11 @@ public class Administrateur extends Utilisateur {
                 a.setStatut(StatutAnnonce.DESACTIVEE);
             }
         }
+    }
+    
+    public void publierAnnonce(Set<Description> descriptions, Set<Photo> photos) {
+        Membre m = new Membre();
+        m.publierAnnonce(descriptions, photos);
     }
 
     @Override
