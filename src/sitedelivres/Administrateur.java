@@ -108,19 +108,17 @@ public class Administrateur extends Utilisateur {
                 m.getMotPasse(), m.getNom(), m.getPrenom());
     }
 
-    public void consulterSignalements() {
+    public void consulterSignalements(Set<Signalement> signalements) {
         if (!this.estAuthentifie) {
             System.out.println("Authentification necessaire pour consulter les signalements");
         } 
         
         if (getIdAdministrateur() > 0) {
-            Membre m = new Membre();
-            for(Signalement s : m.getSignalements())
+            for(Signalement s : signalements)
                 System.out.println("Signalement: " + s.getIdSignalement());
         } else {
             System.out.println(getIdAdministrateur());
-            System.out.println("Doit etre administrateur pour consulter les signalements");
-            
+            System.out.println("Doit etre administrateur pour consulter les signalements"); 
         }
     }
 
