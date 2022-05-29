@@ -83,53 +83,53 @@ public class Membre extends Utilisateur {
         return experienceClient;
     }
 
-    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, String titre) {
-        Set<Annonce> annoncesTrouvees = new HashSet(0);
+    public Set<Description> rechercherAnnonces(Set<Description> descriptions, String titre) {
+        Set<Description> resultats = new HashSet(0);
         for (Description description : descriptions) {
             if (description.getLivre().getTitre().contains(titre)
                     && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
-                annoncesTrouvees.add(description.getAnnonce());
+                resultats.add(description);
             }
         }
 
-        return annoncesTrouvees;
+        return resultats;
     }
 
-    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, Cours cours) {
-        Set<Annonce> annoncesTrouvees = new HashSet(0);
+    public Set<Description> rechercherAnnonces(Set<Description> descriptions, Cours cours) {
+        Set<Description> resultats = new HashSet(0);
         for (Description description : descriptions) {
             if (description.getLivre().getCours() == cours
                     && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
-                annoncesTrouvees.add(description.getAnnonce());
+                resultats.add(description);
             }
         }
 
-        return annoncesTrouvees;
+        return resultats;
     }
 
-    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, float prixMin, float prixMax) {
-        Set<Annonce> annoncesTrouvees = new HashSet(0);
+    public Set<Description> rechercherAnnonces(Set<Description> descriptions, float prixMin, float prixMax) {
+        Set<Description> resultats = new HashSet(0);
         for (Description description : descriptions) {
             if (description.getPrix() >= prixMin
                     && description.getPrix() <= prixMax
                     && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
-                annoncesTrouvees.add(description.getAnnonce());
+                resultats.add(description);
             }
         }
 
-        return annoncesTrouvees;
+        return resultats;
     }
 
-    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, Categorie categorie) {
-        Set<Annonce> annoncesTrouvees = new HashSet(0);
+    public Set<Description> rechercherAnnonces(Set<Description> descriptions, Categorie categorie) {
+        Set<Description> resultats = new HashSet(0);
         for (Description description : descriptions) {
             if (description.getLivre().getCategorie() == categorie
                     && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
-                annoncesTrouvees.add(description.getAnnonce());
+                resultats.add(description);
             }
         }
 
-        return annoncesTrouvees;
+        return resultats;
     }
 
     public void consulterAnnonce(Annonce annonce) {
