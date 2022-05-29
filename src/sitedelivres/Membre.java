@@ -65,7 +65,7 @@ public class Membre extends Utilisateur {
             return null;
         }
         
-        ExperienceClient experienceClient = new ExperienceClient(noteLivre, noteVendeur, commentaire, new Date(), this, annonce, true);
+        ExperienceClient experienceClient = new ExperienceClient(noteLivre, noteVendeur, commentaire, new Date(), this, annonce);
         
         return experienceClient;
     }
