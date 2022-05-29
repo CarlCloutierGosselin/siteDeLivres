@@ -31,8 +31,8 @@ public class SiteDeLivres {
         Categorie categVehicule = new Categorie("Véhicules");
         Categorie categMoto = new Categorie("Moto");
         Categorie categBus = new Categorie("Autobus");
-        categChat.setCategorieMere(categMoto);
-        categChien.setCategorieMere(categBus);
+        categMoto.setCategorieMere(categVehicule);
+        categBus.setCategorieMere(categVehicule);
         
         Auteur auteur1 = new Auteur(5, "Woman", "Cat");
         Auteur auteur2 = new Auteur(4, "De Pise", "Bernard");
@@ -89,6 +89,15 @@ public class SiteDeLivres {
 
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
 
+        //System.out.println(auteur1);
+        //System.out.println(categBus);
+        //System.out.println(vet);
+        //System.out.println(mecanique);
+        //System.out.println(desc1);
+
+        //System.out.println(livre4);
+        
+        
 //        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
 //        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce1);
 //        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce1);

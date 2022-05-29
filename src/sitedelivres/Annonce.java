@@ -80,14 +80,14 @@ public class Annonce {
     public String toString() {
         String resultat = "Annonce{" + "noAnnonce=" + noAnnonce 
                 + ", datePublication=" + datePublication 
-                + ", statut=" + statut + ", membre=" + membre.getNom();
+                + ", statut=" + statut + ", membre=" + membre.getNom() + "\n";
         
         for (Photo ph : photos){
-            resultat += ", chemin photo=" + ph.getChemin() + "\n";
+            resultat += "\t" +"chemin photo=" + ph.getChemin() + "\n";
         }
         
         for (Signalement s : signalements){
-            resultat += ", signalement=" + s.getIdSignalement() + " " + s.getDateSignalement() + "\n";
+            resultat += "\t" + "signalement=" + s.getIdSignalement() + " " + s.getDateSignalement() + "\n";
         }
         
         return resultat + "}";

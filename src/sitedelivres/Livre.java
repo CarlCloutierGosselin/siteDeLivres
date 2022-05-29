@@ -82,9 +82,16 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre{" + "isbn=" + isbn + ", titre=" + titre 
-                + ", sujet=" + sujet + ", editeur=" + editeur 
-                + ", categorie=" + categorie.getNom() + ", cours=" + cours + '}';
+        String resultat = "Livre{" + "isbn=" + isbn + ", titre=" + titre
+                + ", sujet=" + sujet + ", editeur=" + editeur
+                + ", categorie=" + categorie.getNom();
+
+        resultat += "\n Sigle des cours associes \n";
+        for (Cours c : cours) {
+            resultat += "\t" + c.getSigle() + "\n";
+        }
+
+        return resultat + '}';
     }
 
 }

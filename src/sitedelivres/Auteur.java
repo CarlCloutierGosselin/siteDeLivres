@@ -34,7 +34,12 @@ public class Auteur extends Personne {
 
     @Override
     public String toString() {
-        return "Auteur{" + "nom=" + getNom() + ", note=" + note + '}';
+        String resultat = "Auteur{" + "nom=" + nom + ", note=" + note + "\nBibliographie: \n";
+        for (Livre l : bibliographie){
+            resultat += "\t" +l.getTitre() + "\n";
+        }
+        
+        return resultat += '}';
     }
 
 }

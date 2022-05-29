@@ -61,9 +61,9 @@ public class Description {
 
     @Override
     public String toString() {
-        return "Description{" + "etat=" + etat + ", prix=" + prix 
-                + ", resume=" + resume + ", annonce=" + annonce 
-                + ", livre=" + livre + '}';
+        return "Description{" + "etat=" + etat + ", prix=" + prix
+                + ", resume=" + resume + ", annonceID=" + annonce.getNoAnnonce()
+                + ", titre du livre=" + livre.getTitre() + '}';
     }
 
 }

@@ -11,7 +11,7 @@ public class Categorie {
     private Set<Categorie> sousCategories = new HashSet(0);
     private Categorie categorieMere;
     private static int nbCategories = 0;
-    
+
     public Categorie() {
         this.noCategorie = nbCategories++;
     }
@@ -60,8 +60,24 @@ public class Categorie {
 
     @Override
     public String toString() {
-        return "Categorie{" + "noCategorie=" + noCategorie 
-                + ", nom=" + nom + ", livres=" + livres + '}';
+        String resultat = "Categorie{" + "noCategorie=" + noCategorie
+                + ", nom=" + nom;
+
+        if (categorieMere != null) {
+            resultat += ", categorie mère=" + categorieMere.getNom();
+        }
+        
+        resultat += "\nTitre des livres associés:\n";
+        for (Livre l : livres) {
+            resultat += "\t" +l.getTitre() + "\n";
+        }
+
+        resultat += "\nNom des sous catégories:\n";
+        for (Categorie c : sousCategories) {
+            resultat += "\t" +c.getNom() + "\n";
+        }
+
+        return resultat + '}';
     }
 
 }

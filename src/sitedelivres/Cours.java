@@ -53,8 +53,15 @@ public class Cours {
 
     @Override
     public String toString() {
-        return "Cours{" + "titre=" + titre + ", sigle=" + sigle 
-                + ", description=" + description + ", livres=" + livres + '}';
+        String resultat = "Cours{" + "titre=" + titre + ", sigle=" + sigle
+                + ", description=" + description;
+        
+        resultat += "\nTitre des livres associes au cours:\n";
+        for (Livre l : livres){
+            resultat += "\t" + l.getTitre() + "\n";
+        }
+        
+        return resultat + '}';
     }
 
 }

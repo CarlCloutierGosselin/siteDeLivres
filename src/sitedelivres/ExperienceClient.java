@@ -41,8 +41,9 @@ public class ExperienceClient {
     }
 
     public void setNoteVendeur(int noteVendeur) {
-        if (noteVendeur >= 0 && noteVendeur < 6)
-        this.noteVendeur = noteVendeur;
+        if (noteVendeur >= 0 && noteVendeur < 6) {
+            this.noteVendeur = noteVendeur;
+        }
     }
 
     public String getCommentaire() {
@@ -60,7 +61,7 @@ public class ExperienceClient {
     public void setDate(Date date) {
         this.date = date;
     }
-    
+
     public int getEvaluation() {
         return evaluation;
     }
@@ -89,12 +90,13 @@ public class ExperienceClient {
 
     @Override
     public String toString() {
-        return "ExperienceClient{" + "noteLivre=" + noteLivre 
-                + ", noteVendeur=" + noteVendeur + ", commentaire=" 
-                + commentaire + ", date=" + date + ", evaluation=" + evaluation 
-                + ", utilisateur=" + utilisateur.getNom() 
+
+        return "ExperienceClient{" + "noteLivre=" + noteLivre
+                + ", noteVendeur=" + noteVendeur + ", commentaire="
+                + commentaire + ", date=" + date + ", evaluation=" + evaluation
+                + ", utilisateur=" + utilisateur.getNom()
                 + ", annonce=" + annonce.getNoAnnonce() + '}';
     }
-
+    
     
 }
