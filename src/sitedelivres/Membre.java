@@ -73,7 +73,8 @@ public class Membre extends Utilisateur {
     public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, String titre) {
         Set<Annonce> annoncesTrouvees = new HashSet(0);
         for (Description description : descriptions) {
-            if (description.getLivre().getTitre().contains(titre)) {
+            if (description.getLivre().getTitre().contains(titre)
+                    && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
                 annoncesTrouvees.add(description.getAnnonce());
             }
         }
@@ -84,34 +85,46 @@ public class Membre extends Utilisateur {
     public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, Cours cours) {
         Set<Annonce> annoncesTrouvees = new HashSet(0);
         for (Description description : descriptions) {
-            if (description.getLivre().getCours() == cours) {
+            if (description.getLivre().getCours() == cours
+                    && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
                 annoncesTrouvees.add(description.getAnnonce());
             }
         }
 
         return annoncesTrouvees;
     }
-    
+
     public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, float prixMin, float prixMax) {
         Set<Annonce> annoncesTrouvees = new HashSet(0);
         for (Description description : descriptions) {
-            if (description.getPrix() >= prixMin && description.getPrix() <= prixMax) {
+            if (description.getPrix() >= prixMin
+                    && description.getPrix() <= prixMax
+                    && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
                 annoncesTrouvees.add(description.getAnnonce());
             }
         }
 
         return annoncesTrouvees;
     }
-    
+
     public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, Categorie categorie) {
         Set<Annonce> annoncesTrouvees = new HashSet(0);
         for (Description description : descriptions) {
-            if (description.getLivre().getCategorie() == categorie) {
+            if (description.getLivre().getCategorie() == categorie
+                    && description.getAnnonce().getStatut() == StatutAnnonce.PUBLIEE) {
                 annoncesTrouvees.add(description.getAnnonce());
             }
         }
 
         return annoncesTrouvees;
+    }
+
+    public void consulterAnnonce(Annonce annonce) {
+        System.out.println(annonce);
+    }
+
+    public void modifierAnnonce(Annonce annonce) {
+
     }
 
     public void ajouterSignalement() {
