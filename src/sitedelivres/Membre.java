@@ -41,7 +41,7 @@ public class Membre extends Utilisateur {
 
         nouvelleAnnonce.setPhotos(photos);
         annonces.add(nouvelleAnnonce);
-        
+
         return nouvelleAnnonce;
     }
 
@@ -50,30 +50,74 @@ public class Membre extends Utilisateur {
             System.out.println("Le membre doit être authentifié pour signaler une annonce");
             return null;
         }
-        
+
         Signalement signalement = new Signalement(new Date(), objet, null, annonce, null, annonce.getMembre());
         annonce.getSignalements().add(signalement);
-        
+
         annonce.getMembre().ajouterSignalement();
-        
+
         return signalement;
     }
 
-    public ExperienceClient commenterExperienceUtilisateur(int noteLivre, int noteVendeur, String commentaire, int evaluation, Annonce annonce){
+    public ExperienceClient commenterExperienceUtilisateur(int noteLivre, int noteVendeur, String commentaire, int evaluation, Annonce annonce) {
         if (!this.estAuthentifie) {
             System.out.println("Le membre doit être authentifié pour commenter une experience client");
             return null;
         }
-        
+
         ExperienceClient experienceClient = new ExperienceClient(noteLivre, noteVendeur, commentaire, new Date(), evaluation, this, annonce);
-        
+
         return experienceClient;
     }
-    
-    public void ajouterSignalement(){
-        nbSignalements++;
+
+    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, String titre) {
+        Set<Annonce> annoncesTrouvees = new HashSet(0);
+        for (Description description : descriptions) {
+            if (description.getLivre().getTitre().contains(titre)) {
+                annoncesTrouvees.add(description.getAnnonce());
+            }
+        }
+
+        return annoncesTrouvees;
+    }
+
+    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, Cours cours) {
+        Set<Annonce> annoncesTrouvees = new HashSet(0);
+        for (Description description : descriptions) {
+            if (description.getLivre().getCours() == cours) {
+                annoncesTrouvees.add(description.getAnnonce());
+            }
+        }
+
+        return annoncesTrouvees;
     }
     
+    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, float prixMin, float prixMax) {
+        Set<Annonce> annoncesTrouvees = new HashSet(0);
+        for (Description description : descriptions) {
+            if (description.getPrix() >= prixMin && description.getPrix() <= prixMax) {
+                annoncesTrouvees.add(description.getAnnonce());
+            }
+        }
+
+        return annoncesTrouvees;
+    }
+    
+    public Set<Annonce> rechercherAnnonces(Set<Description> descriptions, Categorie categorie) {
+        Set<Annonce> annoncesTrouvees = new HashSet(0);
+        for (Description description : descriptions) {
+            if (description.getLivre().getCategorie() == categorie) {
+                annoncesTrouvees.add(description.getAnnonce());
+            }
+        }
+
+        return annoncesTrouvees;
+    }
+
+    public void ajouterSignalement() {
+        nbSignalements++;
+    }
+
     public Date getDateInscription() {
         return dateInscription;
     }
@@ -140,10 +184,10 @@ public class Membre extends Utilisateur {
 
     @Override
     public String toString() {
-        return "Membre{" + "dateInscription=" + dateInscription 
-                + ", courriel=" + courriel + ", numeroTelephone=" + noTelephone 
-                + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements 
-                + ", statut=" + statut + ", signalements=" + signalements 
+        return "Membre{" + "dateInscription=" + dateInscription
+                + ", courriel=" + courriel + ", numeroTelephone=" + noTelephone
+                + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements
+                + ", statut=" + statut + ", signalements=" + signalements
                 + ", annonces=" + annonces + '}';
     }
 
