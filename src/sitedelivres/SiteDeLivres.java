@@ -63,15 +63,12 @@ public class SiteDeLivres {
         Livre livre5 = new Livre(559, "La bible du C++", "Apprendre a coder", "Editions serieuses", null);
         livre5.ajouterAuteur(auteur3);
         livre5.setCategorie(categProg);
-        
+
         Livre livre6 = new Livre(560, "La bible du VB", "Apprendre a coder", "Editions serieuses", null);
         livre6.ajouterAuteur(auteur3);
         livre6.setCategorie(categProg);
-        
-        
-        
-        //On ajoute des cours, et associons les livres qu'ils reiquierent
 
+        //On ajoute des cours, et associons les livres qu'ils reiquierent
         Cours vet = new Cours("Medecine veterinaire 101", "vet101", "Cours de base en medecine veterinaire");
         livre2.ajouterCours(vet);
         livre1.ajouterCours(vet);
@@ -138,7 +135,7 @@ public class SiteDeLivres {
 
         Annonce annonce3 = membre2.publierAnnonce(descriptions3, photos3);
         System.out.println(annonce3);
-        
+
         //Creation d'une quatrieme annonce
         Photo photo6 = new Photo(new Date(), "https://imgstocklivre.org/biblbevb.png", null);
 
@@ -170,31 +167,31 @@ public class SiteDeLivres {
         //Recherche par prix
         System.out.println("Resultat des descriptions entre 10$ et 5000$");
         Set<Description> resultat2 = membre2.rechercherAnnonces(descriptions, 10.00f, 5000.00f);
-        for(Description desc : resultat2){
+        for (Description desc : resultat2) {
             System.out.println("\t" + desc);
         }
-        
+
         //Recherche par Mot clé dans les titres
         System.out.println("Resultat des descriptions ayant un livre comportant bible dans son titre");
         Set<Description> resultat3 = membre3.rechercherAnnonces(descriptions, "bible");
-        for(Description desc : resultat3){
+        for (Description desc : resultat3) {
             System.out.println("\t" + desc);
         }
-        
+
         //Recherche par categories
         System.out.println("Resultat des descriptions ayant un livre de categorie: " + categChat.getNom());
         Set<Description> resultat4 = membre3.rechercherAnnonces(descriptions, categChat);
-        for(Description desc : resultat4){
+        for (Description desc : resultat4) {
             System.out.println("\t" + desc);
         }
-        
+
         //Test de recherche composite
         //On veut les descriptions correspondant aux livres entre 10$ et 5000$ contenant bible dans le titre
         Set<Description> resultatTemporaire = membre2.rechercherAnnonces(descriptions, 10.00f, 5000.00f);
         Set<Description> resultatComposite = membre2.rechercherAnnonces(resultatTemporaire, "bible");
-        
+
         System.out.println("Resultat des descriptions ayant un livre dont le titre est bible, et entre 10$ et 5000$");
-        for(Description desc : resultatComposite){
+        for (Description desc : resultatComposite) {
             System.out.println("\t" + desc);
         }
 
@@ -244,5 +241,8 @@ public class SiteDeLivres {
 //        System.out.println(admin2);
 //        System.out.println(admin3);
 //        System.out.println(admin4 + "\n");
+        Administrateur admin1 = new Administrateur("admin001", "qwerty", "Poitra", "Robert");
+        admin1.estAuthentifie = true;
+        admin1.consulterSignalements();
     }
 }
