@@ -41,6 +41,7 @@ public class Membre extends Utilisateur {
             return null;
         } else if (this.getStatut() != StatutMembre.ACTIF) {
             System.out.println("Le membre d'id=" + idUtilisateur + " doit être actif pour publier une annonce");
+            return null;
         }
 
         Annonce nouvelleAnnonce = new Annonce(new Date(), StatutAnnonce.PUBLIEE, this);
@@ -60,7 +61,10 @@ public class Membre extends Utilisateur {
 
     public Signalement signalerAnnonce(Annonce annonce, String objet) {
         if (!this.estAuthentifie) {
-            System.out.println("Le membre d'id=" + getIdUtilisateur() + " doit être authentifié pour signaler une annonce");
+            System.out.println("Le membre d'id=" + idUtilisateur + " doit être authentifié pour signaler une annonce");
+            return null;
+        } else if (this.getStatut() != StatutMembre.ACTIF) {
+            System.out.println("Le membre d'id=" + idUtilisateur + " doit être actif pour publier une annonce");
             return null;
         }
 
@@ -75,6 +79,9 @@ public class Membre extends Utilisateur {
     public ExperienceClient commenterExperienceUtilisateur(int noteLivre, int noteVendeur, String commentaire, int evaluation, Annonce annonce) {
         if (!this.estAuthentifie) {
             System.out.println("Le membre d'id=" + getIdUtilisateur() + " doit être authentifié pour commenter une experience client");
+            return null;
+        } else if (this.getStatut() != StatutMembre.ACTIF) {
+            System.out.println("Le membre d'id=" + idUtilisateur + " doit être actif pour publier une annonce");
             return null;
         }
 
