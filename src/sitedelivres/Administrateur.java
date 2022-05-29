@@ -36,7 +36,8 @@ public class Administrateur extends Utilisateur {
 
     @Override
     public String toString() {
-        return "Administrateur{" + "idAdministrateur=" + idAdministrateur + ", signalements=" + signalements + '}';
+        return "Administrateur{" + "idAdministrateur=" + idAdministrateur 
+                + ", signalements=" + signalements + '}';
     }
 
 }

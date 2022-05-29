@@ -53,7 +53,8 @@ public class Cours {
 
     @Override
     public String toString() {
-        return "Cours{" + "titre=" + titre + ", sigle=" + sigle + ", description=" + description + ", livres=" + livres + '}';
+        return "Cours{" + "titre=" + titre + ", sigle=" + sigle 
+                + ", description=" + description + ", livres=" + livres + '}';
     }
 
 }

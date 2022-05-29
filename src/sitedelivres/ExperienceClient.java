@@ -89,7 +89,11 @@ public class ExperienceClient {
 
     @Override
     public String toString() {
-        return "ExperienceClient{" + "noteLivre=" + noteLivre + ", noteVendeur=" + noteVendeur + ", commentaire=" + commentaire + ", date=" + date + ", evaluation=" + evaluation + ", utilisateur=" + utilisateur.getNom() + ", annonce=" + annonce.getNoAnnonce() + '}';
+        return "ExperienceClient{" + "noteLivre=" + noteLivre 
+                + ", noteVendeur=" + noteVendeur + ", commentaire=" 
+                + commentaire + ", date=" + date + ", evaluation=" + evaluation 
+                + ", utilisateur=" + utilisateur.getNom() 
+                + ", annonce=" + annonce.getNoAnnonce() + '}';
     }
 
     

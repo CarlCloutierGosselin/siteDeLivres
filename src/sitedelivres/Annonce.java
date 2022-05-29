@@ -76,7 +76,10 @@ public class Annonce {
 
     @Override
     public String toString() {
-        return "Annonce{" + "noAnnonceUnique=" + noAnnonce + ", datePublication=" + datePublication + ", statut=" + statut + ", membre=" + membre.getNom() + ", photos=" + photos + ", signalements=" + signalements + '}';
+        return "Annonce{" + "noAnnonceUnique=" + noAnnonce 
+                + ", datePublication=" + datePublication 
+                + ", statut=" + statut + ", membre=" + membre.getNom() 
+                + ", photos=" + photos + ", signalements=" + signalements + '}';
     }
 
 }

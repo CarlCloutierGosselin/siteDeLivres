@@ -140,7 +140,11 @@ public class Membre extends Utilisateur {
 
     @Override
     public String toString() {
-        return "Membre{" + "dateInscription=" + dateInscription + ", courriel=" + courriel + ", numeroTelephone=" + noTelephone + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements + ", statut=" + statut + ", signalements=" + signalements + ", annonces=" + annonces + '}';
+        return "Membre{" + "dateInscription=" + dateInscription 
+                + ", courriel=" + courriel + ", numeroTelephone=" + noTelephone 
+                + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements 
+                + ", statut=" + statut + ", signalements=" + signalements 
+                + ", annonces=" + annonces + '}';
     }
 
 }

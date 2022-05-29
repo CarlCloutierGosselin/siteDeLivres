@@ -54,7 +54,8 @@ public class Photo {
 
     @Override
     public String toString() {
-        return "Photo{" + "id=" + id + ", dateAjout=" + dateAjout + ", chemin=" + chemin + ", annonce=" + annonce.getNoAnnonce() + '}';
+        return "Photo{" + "id=" + id + ", dateAjout=" + dateAjout 
+                + ", chemin=" + chemin + ", annonce=" + annonce.getNoAnnonce() + '}';
     }
 
 }

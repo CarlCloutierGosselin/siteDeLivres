@@ -79,7 +79,10 @@ public class Signalement {
 
     @Override
     public String toString() {
-        return "Signalement{" + "idSignalement=" + idSignalement + ", dateSignalement=" + dateSignalement + ", objet=" + objet + ", conclusion=" + conclusion + ", annonce=" + annonce.getNoAnnonce() + ", membre=" + membre.getNom() + '}';
+        return "Signalement{" + "idSignalement=" + idSignalement 
+                + ", dateSignalement=" + dateSignalement + ", objet=" + objet 
+                + ", conclusion=" + conclusion + ", annonce=" + annonce.getNoAnnonce() 
+                + ", membre=" + membre.getNom() + '}';
     }
 
 }
