@@ -8,6 +8,7 @@ public class SiteDeLivres {
 
     static Set<ExperienceClient> experiencesClient = new HashSet(0);
     static Set<Description> descriptions = new HashSet(0);
+    static Set<Signalement> signalements = new HashSet(0);
 
     public static void main(String[] args) {
         //Tests de notre acteur membre
@@ -249,6 +250,6 @@ public class SiteDeLivres {
 //        System.out.println(admin4 + "\n");
         Administrateur admin1 = new Administrateur("admin001", "qwerty", "Poitra", "Robert");
         admin1.estAuthentifie = true;
-        admin1.consulterSignalements();
+        admin1.consulterSignalements(signalements);
     }
 }
