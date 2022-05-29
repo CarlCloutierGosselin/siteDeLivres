@@ -1,5 +1,6 @@
 package sitedelivres;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,9 +35,13 @@ public class Administrateur extends Utilisateur {
         this.signalements = signalements;
     }
     
-    public Annonce desactiverVieillesAnnonces(Annonce annonce){
+    public void desactiverVieillesAnnonces(Annonce annonce){
         annonce.setStatut(StatutAnnonce.DESACTIVEE);
-        return annonce;
+    }
+    
+    public void desactiverVieillesAnnonces(Date annee){
+        /*if()
+        annonce.setStatut(StatutAnnonce.DESACTIVEE);*/
     }
 
     @Override
