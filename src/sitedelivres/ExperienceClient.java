@@ -28,7 +28,10 @@ public class ExperienceClient {
     }
 
     public void setNoteLivre(int noteLivre) {
-        this.noteLivre = noteLivre;
+        if (noteLivre >= 0 && noteLivre < 6) {
+            this.noteLivre = noteLivre;
+        }
+
     }
 
     public int getNoteVendeur() {
@@ -36,6 +39,7 @@ public class ExperienceClient {
     }
 
     public void setNoteVendeur(int noteVendeur) {
+        if (noteVendeur >= 0 && noteVendeur < 6)
         this.noteVendeur = noteVendeur;
     }
 

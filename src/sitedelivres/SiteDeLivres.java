@@ -61,8 +61,12 @@ public class SiteDeLivres {
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
 
         ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", annonce1);
+        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", annonce1);
+        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", annonce1);
         
         experiencesClient.add(exp1);
+        experiencesClient.add(exp2);
+        experiencesClient.add(exp3);
         
         System.out.println(admin1);
         System.out.println(admin2);
@@ -81,6 +85,8 @@ public class SiteDeLivres {
         
         System.out.println(signalement1);
         
-        System.out.println(exp1);
+        for (ExperienceClient exp:experiencesClient) {
+            System.out.println(exp);
+        }
     }
 }
