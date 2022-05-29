@@ -64,7 +64,46 @@ public class Administrateur extends Utilisateur {
         Membre m = new Membre();
         m.modifierAnnonce(description, etat, prix, resume);
     }
+    
+    public Categorie ajouterCategorie(Categorie cat){
+        if (!this.estAuthentifie) {
+            System.out.println("Authentification necessaire pour ajouter une categorie");
+            return null;
+        } else if (this.getIdAdministrateur() != 0) {
+            System.out.println("Doit être administrateur pour ajouter une categorie");
+            return null;
+        }
+        return new Categorie(cat.getNom());
+    }
+    
+    public Categorie desactiverCategorie(Categorie cat){
+        if (!this.estAuthentifie) {
+            System.out.println("Authentification necessaire pour desactiver une categorie");
+            return null;
+        } else if (this.getIdAdministrateur() != 0) {
+            System.out.println("Doit être administrateur pour desactiver une categorie");
+            return null;
+        }
+        
+        for(Categorie c : cat.getSousCategories()){
+            if(c.getNom().contains(cat.getNom()))
+                c.setNom(null);
+        }
+        cat.setCategorieMere(null);
+        
+        return cat;
+    }
 
+    public Membre ajouterMembre(Membre m){
+        return new Membre(m.getDateInscription(), m.getCourriel(), m.getNumeroTelephone(), 
+                          m.getAdresse(), m.getStatut(), m.getIdUtilisateur(), 
+                          m.getMotPasse(), m.getNom(), m.getPrenom());
+    }
+    
+    public void consulterSignalements(){
+        
+    }
+    
     @Override
     public String toString() {
         return "Administrateur{" + "idAdministrateur=" + idAdministrateur
