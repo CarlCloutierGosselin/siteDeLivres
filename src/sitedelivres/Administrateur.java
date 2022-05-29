@@ -114,10 +114,13 @@ public class Administrateur extends Utilisateur {
         } 
         
         if (getIdAdministrateur() > 0) {
-            for(Signalement s : signalements)
+            for(Signalement s : signalements) {
+                System.out.println();
                 System.out.println("Signalement: " + s.getIdSignalement());
+                System.out.print(s.getObjet());
+                System.out.println();
+            }
         } else {
-            System.out.println(getIdAdministrateur());
             System.out.println("Doit etre administrateur pour consulter les signalements"); 
         }
     }
