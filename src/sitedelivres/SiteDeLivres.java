@@ -81,8 +81,8 @@ public class SiteDeLivres {
         System.out.println(membre4);
         System.out.println(membre5+"\n");
 
-        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs()+"categorie="+desc1.getLivre().getCategorie());
-        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs()+"categorie="+desc2.getLivre().getCategorie()+"\n");
+        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs() + desc1.getLivre().getCategorie());
+        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs() + desc2.getLivre().getCategorie() + "\n");
     
         System.out.println(vet);
         

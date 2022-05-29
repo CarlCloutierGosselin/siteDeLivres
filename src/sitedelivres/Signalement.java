@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class Signalement {
 
-    private static int nbSignalements = 1;
-    private int idSignalement;
+    private static int idSignalement = 1;
     private Date dateSignalement;
     private String objet;
     private String conclusion;
@@ -14,11 +13,11 @@ public class Signalement {
     private Membre membre;
 
     public Signalement() {
-        idSignalement = nbSignalements++;
+        Signalement.idSignalement = idSignalement++;
     }
 
     public Signalement(Date dateSignalement, String objet, String conclusion, Annonce annonce, Administrateur administrateur, Membre membre) {
-        idSignalement = nbSignalements++;
+        Signalement.idSignalement = idSignalement++;
         this.dateSignalement = dateSignalement;
         this.objet = objet;
         this.conclusion = conclusion;
