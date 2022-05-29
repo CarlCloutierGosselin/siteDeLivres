@@ -78,10 +78,19 @@ public class Annonce {
 
     @Override
     public String toString() {
-        return "Annonce{" + "noAnnonce=" + noAnnonce 
+        String resultat = "Annonce{" + "noAnnonce=" + noAnnonce 
                 + ", datePublication=" + datePublication 
-                + ", statut=" + statut + ", membre=" + membre.getNom() 
-                + ", photos=" + photos + ", signalements=" + signalements + '}';
+                + ", statut=" + statut + ", membre=" + membre.getNom();
+        
+        for (Photo ph : photos){
+            resultat += ", chemin photo=" + ph.getChemin() + "\n";
+        }
+        
+        for (Signalement s : signalements){
+            resultat += ", signalement=" + s.getIdSignalement() + " " + s.getDateSignalement() + "\n";
+        }
+        
+        return resultat + "}";
     }
 
 }
