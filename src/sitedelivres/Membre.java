@@ -15,6 +15,9 @@ public class Membre extends Utilisateur {
     private Set<Signalement> signalements = new HashSet(0);
     private Set<Annonce> annonces = new HashSet(0);
 
+    public Membre(){
+    }
+    
     public Membre(Date dateInscription, String courriel, String noTelephone, String adresse, StatutMembre statut, String idUtilisateur, String motPasse, String nom, String prenom) {
         super(idUtilisateur, motPasse, nom, prenom);
         this.dateInscription = dateInscription;
