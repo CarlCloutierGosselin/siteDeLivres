@@ -63,9 +63,9 @@ public class SiteDeLivres {
 
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
 
-        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", annonce1);
-        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", annonce1);
-        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", annonce1);
+        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
+        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce1);
+        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce1);
         
         experiencesClient.add(exp1);
         experiencesClient.add(exp2);

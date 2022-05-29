@@ -8,18 +8,19 @@ public class ExperienceClient {
     private int noteVendeur;
     private String commentaire;
     private Date date;
+    private int evaluation;
     private Utilisateur utilisateur;
     private Annonce annonce;
-    private boolean estAcheteurFinal;
 
     public ExperienceClient() {
     }
 
-    public ExperienceClient(int noteLivre, int noteVendeur, String commentaire, Date date, Utilisateur utilisateur, Annonce annonce) {
+    public ExperienceClient(int noteLivre, int noteVendeur, String commentaire, Date date, int evaluation, Utilisateur utilisateur, Annonce annonce) {
         this.noteLivre = noteLivre;
         this.noteVendeur = noteVendeur;
         this.commentaire = commentaire;
         this.date = date;
+        this.evaluation = evaluation;
         this.utilisateur = utilisateur;
         this.annonce = annonce;
     }
@@ -59,6 +60,16 @@ public class ExperienceClient {
     public void setDate(Date date) {
         this.date = date;
     }
+    
+    public int getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(int evaluation) {
+        if (noteLivre >= 0 && noteLivre < 6) {
+            this.evaluation = evaluation;
+        }
+    }
 
     public Utilisateur getUtilisateur() {
         return utilisateur;
@@ -78,6 +89,8 @@ public class ExperienceClient {
 
     @Override
     public String toString() {
-        return "ExperienceClient{" + "noteLivre=" + noteLivre + ", noteVendeur=" + noteVendeur + ", commentaire=" + commentaire + ", date=" + date + ", utilisateur=" + utilisateur.getNom() + ", annonce=" + annonce.getNoAnnonce() + '}';
+        return "ExperienceClient{" + "noteLivre=" + noteLivre + ", noteVendeur=" + noteVendeur + ", commentaire=" + commentaire + ", date=" + date + ", evaluation=" + evaluation + ", utilisateur=" + utilisateur.getNom() + ", annonce=" + annonce.getNoAnnonce() + '}';
     }
+
+    
 }
