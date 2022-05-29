@@ -63,6 +63,13 @@ public class SiteDeLivres {
         Livre livre5 = new Livre(559, "La bible du C++", "Apprendre a coder", "Editions serieuses", null);
         livre5.ajouterAuteur(auteur3);
         livre5.setCategorie(categProg);
+        
+        Livre livre6 = new Livre(560, "La bible du VB", "Apprendre a coder", "Editions serieuses", null);
+        livre6.ajouterAuteur(auteur3);
+        livre6.setCategorie(categProg);
+        
+        
+        
         //On ajoute des cours, et associons les livres qu'ils reiquierent
 
         Cours vet = new Cours("Medecine veterinaire 101", "vet101", "Cours de base en medecine veterinaire");
@@ -75,6 +82,7 @@ public class SiteDeLivres {
 
         Cours prog = new Cours("programmation 103", "prg103", "Cours de programmation intermediaire");
         livre5.ajouterCours(prog);
+        livre6.ajouterCours(prog);
 
         //Creation d'annonces test
         Photo photo1 = new Photo(new Date(), "https://petitchatton.org/chatton109", null);
@@ -116,7 +124,7 @@ public class SiteDeLivres {
 
         System.out.println(annonce2);
 
-        //Creation d'une deuxieme annonce
+        //Creation d'une troisieme annonce
         Photo photo5 = new Photo(new Date(), "https://imgstocklivre.org/biblbecplusplus.png", null);
 
         Description desc5 = new Description("Bien", 59.99f, "Bien, mais bof, on trouve tout en ligne", null, livre5);
@@ -130,6 +138,21 @@ public class SiteDeLivres {
 
         Annonce annonce3 = membre2.publierAnnonce(descriptions3, photos3);
         System.out.println(annonce3);
+        
+        //Creation d'une quatrieme annonce
+        Photo photo6 = new Photo(new Date(), "https://imgstocklivre.org/biblbevb.png", null);
+
+        Description desc6 = new Description("Superbe", 19.99f, "Bien, mais bof, on trouve tout en ligne", null, livre6);
+
+        Set<Photo> photos4 = new HashSet(0);
+        photos3.add(photo6);
+
+        Set<Description> descriptions4 = new HashSet(0);
+        descriptions4.add(desc6);
+        descriptions.addAll(descriptions4);
+
+        Annonce annonce4 = membre2.publierAnnonce(descriptions4, photos4);
+        System.out.println(annonce4);
 
         //on affiche la totalite des descriptions qui associent les annonces et les livres
         for (Description desc : descriptions) {
@@ -164,8 +187,19 @@ public class SiteDeLivres {
         for(Description desc : resultat4){
             System.out.println("\t" + desc);
         }
+        
+        //Test de recherche composite
+        //On veut les descriptions correspondant aux livres entre 10$ et 5000$ contenant bible dans le titre
+        Set<Description> resultatTemporaire = membre2.rechercherAnnonces(descriptions, 10.00f, 5000.00f);
+        Set<Description> resultatComposite = membre2.rechercherAnnonces(resultatTemporaire, "bible");
+        
+        System.out.println("Resultat des descriptions ayant un livre dont le titre est bible, et entre 10$ et 5000$");
+        for(Description desc : resultatComposite){
+            System.out.println("\t" + desc);
+        }
 
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
+        Signalement signalement2 = membre4.signalerAnnonce(annonce1, "C'est troublant");
 
         //System.out.println(auteur1);
         //System.out.println(categBus);
