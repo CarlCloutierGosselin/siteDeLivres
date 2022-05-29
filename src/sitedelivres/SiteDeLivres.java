@@ -63,15 +63,12 @@ public class SiteDeLivres {
         Livre livre5 = new Livre(559, "La bible du C++", "Apprendre a coder", "Editions serieuses", null);
         livre5.ajouterAuteur(auteur3);
         livre5.setCategorie(categProg);
-        
+
         Livre livre6 = new Livre(560, "La bible du VB", "Apprendre a coder", "Editions serieuses", null);
         livre6.ajouterAuteur(auteur3);
         livre6.setCategorie(categProg);
-        
-        
-        
-        //On ajoute des cours, et associons les livres qu'ils reiquierent
 
+        //On ajoute des cours, et associons les livres qu'ils reiquierent
         Cours vet = new Cours("Medecine veterinaire 101", "vet101", "Cours de base en medecine veterinaire");
         livre2.ajouterCours(vet);
         livre1.ajouterCours(vet);
@@ -138,7 +135,7 @@ public class SiteDeLivres {
 
         Annonce annonce3 = membre2.publierAnnonce(descriptions3, photos3);
         System.out.println(annonce3);
-        
+
         //Creation d'une quatrieme annonce
         Photo photo6 = new Photo(new Date(), "https://imgstocklivre.org/biblbevb.png", null);
 
@@ -170,56 +167,62 @@ public class SiteDeLivres {
         //Recherche par prix
         System.out.println("Resultat des descriptions entre 10$ et 5000$");
         Set<Description> resultat2 = membre2.rechercherAnnonces(descriptions, 10.00f, 5000.00f);
-        for(Description desc : resultat2){
+        for (Description desc : resultat2) {
             System.out.println("\t" + desc);
         }
-        
+
         //Recherche par Mot clé dans les titres
         System.out.println("Resultat des descriptions ayant un livre comportant bible dans son titre");
         Set<Description> resultat3 = membre3.rechercherAnnonces(descriptions, "bible");
-        for(Description desc : resultat3){
+        for (Description desc : resultat3) {
             System.out.println("\t" + desc);
         }
-        
+
         //Recherche par categories
         System.out.println("Resultat des descriptions ayant un livre de categorie: " + categChat.getNom());
         Set<Description> resultat4 = membre3.rechercherAnnonces(descriptions, categChat);
-        for(Description desc : resultat4){
+        for (Description desc : resultat4) {
             System.out.println("\t" + desc);
         }
-        
+
         //Test de recherche composite
         //On veut les descriptions correspondant aux livres entre 10$ et 5000$ contenant bible dans le titre
         Set<Description> resultatTemporaire = membre2.rechercherAnnonces(descriptions, 10.00f, 5000.00f);
         Set<Description> resultatComposite = membre2.rechercherAnnonces(resultatTemporaire, "bible");
-        
+
         System.out.println("Resultat des descriptions ayant un livre dont le titre est bible, et entre 10$ et 5000$");
-        for(Description desc : resultatComposite){
+        for (Description desc : resultatComposite) {
             System.out.println("\t" + desc);
         }
 
         Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
-        Signalement signalement2 = membre4.signalerAnnonce(annonce1, "C'est troublant");
+        Signalement signalement2 = membre5.signalerAnnonce(annonce1, "C'est troublant"); //Le membre non authentifié
+        Signalement signalement3 = membre3.signalerAnnonce(annonce3, "Le livre n'a plus de pages");
 
-        //System.out.println(auteur1);
-        //System.out.println(categBus);
-        //System.out.println(vet);
-        //System.out.println(mecanique);
-        //System.out.println(desc1);
-        //System.out.println(livre4);
-//        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
-//        ExperienceClient exp2 = membre3.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce1);
-//        ExperienceClient exp3 = membre3.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce1);
-//
-//        experiencesClient.add(exp1);
-//        experiencesClient.add(exp2);
-//        experiencesClient.add(exp3);
-//
-//        System.out.println(membre1);
-//        System.out.println(membre2);
-//        System.out.println(membre3);
-//        System.out.println(membre4);
-//        System.out.println(membre5 + "\n");
+        System.out.println("info des signalement test:");
+        System.out.println("\t" + signalement1);
+        System.out.println("\t" + signalement2); //null, le membre n'est pas authentifié
+        System.out.println("\t" + signalement3);
+
+        ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
+        ExperienceClient exp2 = membre2.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce2);
+        ExperienceClient exp3 = membre1.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce3);
+
+        experiencesClient.add(exp1);
+        experiencesClient.add(exp2);
+        experiencesClient.add(exp3);
+
+        System.out.println("Les experiences client:");
+        for (ExperienceClient exp : experiencesClient) {
+            System.out.println("\t" + exp);
+        }
+
+        System.out.println("Les membres participant au echanges");
+        System.out.println("\t" + membre1);
+        System.out.println("\t" + membre2);
+        System.out.println("\t" + membre3);
+        System.out.println("\t" + membre4);
+        System.out.println("\t" + membre5 + "\n");
 //
 //        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs() + desc1.getLivre().getCategorie());
 //        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs() + desc2.getLivre().getCategorie() + "\n");
