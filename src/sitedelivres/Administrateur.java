@@ -1,5 +1,6 @@
 package sitedelivres;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,19 +35,25 @@ public class Administrateur extends Utilisateur {
     public void setSignalements(Set<Signalement> signalements) {
         this.signalements = signalements;
     }
-    
-    public void desactiverVieillesAnnonces(Annonce annonce){
+
+    public void desactiverVieillesAnnonces(Annonce annonce) {
         annonce.setStatut(StatutAnnonce.DESACTIVEE);
     }
-    
-    public void desactiverVieillesAnnonces(Date annee){
-        /*if()
-        annonce.setStatut(StatutAnnonce.DESACTIVEE);*/
+
+    public void desactiverVieillesAnnonces(Date date) {
+        Membre m = new Membre();
+        Set<Annonce> as = m.getAnnonces();
+        
+        for(Annonce a : as) {
+            if (a.getDatePublication().compareTo(date) <= 0) {
+                a.setStatut(StatutAnnonce.DESACTIVEE);
+            }
+        }
     }
 
     @Override
     public String toString() {
-        return "Administrateur{" + "idAdministrateur=" + idAdministrateur 
+        return "Administrateur{" + "idAdministrateur=" + idAdministrateur
                 + ", signalements=" + signalements + '}';
     }
 
