@@ -21,7 +21,7 @@ public class Utilisateur extends Personne {
     }
     
     public void authentifier(String idUtilisateur, String motDePasse){
-        if (idUtilisateur == this.idUtilisateur && motDePasse == this.motPasse)
+        if (idUtilisateur.equals(this.idUtilisateur) && motDePasse.equals(this.motPasse))
             estAuthentifie = true;
     }
     

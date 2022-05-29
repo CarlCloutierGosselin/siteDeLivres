@@ -54,6 +54,16 @@ public class Administrateur extends Utilisateur {
         Membre m = new Membre();
         m.publierAnnonce(descriptions, photos);
     }
+    
+    public void modifierAnnonce(Annonce annonce, Set<Photo> photos){
+        Membre m = new Membre();
+        m.modifierAnnonce(annonce, photos);
+    }
+    
+    public void modifierAnnonce(Description description, String etat, float prix, String resume) {
+        Membre m = new Membre();
+        m.modifierAnnonce(description, etat, prix, resume);
+    }
 
     @Override
     public String toString() {
