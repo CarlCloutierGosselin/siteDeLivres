@@ -29,7 +29,7 @@ public class Membre extends Utilisateur {
 
     public void modifierProfil(String courriel, String noTelephone, String adresse) {
         if (!this.estAuthentifie) {
-            System.out.println("Le membre d'id=" + idUtilisateur + " doit être authentifié pour effectuer une publication");
+            System.out.println("Le membre d'id=" + idUtilisateur + " doit etre authentifie pour effectuer une publication");
             return;
         }
 
@@ -64,10 +64,10 @@ public class Membre extends Utilisateur {
 
     public Signalement signalerAnnonce(Annonce annonce, String objet) {
         if (!this.estAuthentifie) {
-            System.out.println("Le membre d'id=" + idUtilisateur + " doit être authentifié pour signaler une annonce");
+            System.out.println("Le membre d'id=" + idUtilisateur + " doit etre authentifie pour signaler une annonce");
             return null;
         } else if (this.getStatut() != StatutMembre.ACTIF) {
-            System.out.println("Le membre d'id=" + idUtilisateur + " doit être actif pour publier une annonce");
+            System.out.println("Le membre d'id=" + idUtilisateur + " doit etre actif pour signaler une annonce");
             return null;
         }
 

@@ -247,5 +247,8 @@ public class SiteDeLivres {
 //        System.out.println(admin2);
 //        System.out.println(admin3);
 //        System.out.println(admin4 + "\n");
+        Administrateur admin1 = new Administrateur("admin001", "qwerty", "Poitra", "Robert");
+        admin1.estAuthentifie = true;
+        admin1.consulterSignalements();
     }
 }
