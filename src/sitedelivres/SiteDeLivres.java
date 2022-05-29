@@ -29,19 +29,22 @@ public class SiteDeLivres {
         Categorie sousCat2=new Categorie("chien");
         sousCat1.setCategorieMere(cat1);
         sousCat2.setCategorieMere(cat1);
-        
-
+       
         Auteur auteur1 = new Auteur(5, "Woman", "Cat");
 
         Livre livre1 = new Livre(555, "How I met your kitten", "Cats", "Catnip society", sousCat1);
-        Livre livre2 = new Livre(556, "Horrible dogs", "Dog's habbits", "Catnip society", sousCat2);
+        Livre livre2 = new Livre(556, "Horrible dogs", "Dog's habits", "Catnip society", sousCat2);
+        
         livre1.getAuteurs().add(auteur1);
         livre2.getAuteurs().add(auteur1);
         auteur1.getBibliographie().add(livre1);
         auteur1.getBibliographie().add(livre2);
         sousCat1.getLivres().add(livre1);
         sousCat2.getLivres().add(livre2);
-
+        
+        Cours vet = new Cours("Medecine veterinaire 101", "vet101", "Cours de base en medecine veterinaire");
+        vet.getLivres().add(livre2);
+        
         Photo photo1 = new Photo(new Date(), "https://petitchatton.org/chatton109", null);
         Photo photo2 = new Photo(new Date(), "https://petitchien.gg/snoopdog", null);
 
@@ -71,19 +74,21 @@ public class SiteDeLivres {
         System.out.println(admin1);
         System.out.println(admin2);
         System.out.println(admin3);
-        System.out.println(admin4);
+        System.out.println(admin4+"\n");
         System.out.println(membre1);
         System.out.println(membre2);
         System.out.println(membre3);
         System.out.println(membre4);
-        System.out.println(membre5);
+        System.out.println(membre5+"\n");
 
         System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs()+"categorie="+desc1.getLivre().getCategorie());
-        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs()+"categorie="+desc2.getLivre().getCategorie());
+        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs()+"categorie="+desc2.getLivre().getCategorie()+"\n");
     
+        System.out.println(vet);
+        
         System.out.println(annonce1);
         
-        System.out.println(signalement1);
+        System.out.println(signalement1+"\n");
         
         for (ExperienceClient exp:experiencesClient) {
             System.out.println(exp);
