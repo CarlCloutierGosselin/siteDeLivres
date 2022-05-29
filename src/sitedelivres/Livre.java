@@ -24,6 +24,11 @@ public class Livre {
         this.categorie = categorie;
     }
 
+    public void ajouterAuteur(Auteur auteur){
+        auteurs.add(auteur);
+        auteur.getBibliographie().add(this);
+    }
+    
     public int getIsbn() {
         return isbn;
     }
@@ -77,7 +82,11 @@ public class Livre {
     }
 
     public void setCategorie(Categorie categorie) {
+        if (this.categorie != null){
+            categorie.getLivres().remove(this);
+        }
         this.categorie = categorie;
+        categorie.getLivres().add(this);
     }
 
     @Override
@@ -92,6 +101,11 @@ public class Livre {
         }
 
         return resultat + '}';
+    }
+
+    public void ajouterCours(Cours cours) {
+        this.cours.add(cours);
+        cours.getLivres().add(this);
     }
 
 }
