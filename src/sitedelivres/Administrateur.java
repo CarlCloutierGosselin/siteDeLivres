@@ -33,6 +33,11 @@ public class Administrateur extends Utilisateur {
     public void setSignalements(Set<Signalement> signalements) {
         this.signalements = signalements;
     }
+    
+    public Annonce desactiverVieillesAnnonces(Annonce annonce){
+        annonce.setStatut(StatutAnnonce.DESACTIVEE);
+        return annonce;
+    }
 
     @Override
     public String toString() {
