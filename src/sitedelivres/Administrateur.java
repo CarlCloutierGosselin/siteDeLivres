@@ -111,29 +111,55 @@ public class Administrateur extends Utilisateur {
     public void consulterSignalements(Set<Signalement> signalements) {
         if (!this.estAuthentifie) {
             System.out.println("Authentification necessaire pour consulter les signalements");
-        } 
-        
-        if (getIdAdministrateur() > 0) {
-            for(Signalement s : signalements) {
+        } else if (getIdAdministrateur() > 0) {
+            for (Signalement s : signalements) {
                 System.out.println();
                 System.out.println("Signalement: " + s.getIdSignalement());
                 System.out.print(s.getObjet());
                 System.out.println();
             }
         } else {
-            System.out.println("Doit etre administrateur pour consulter les signalements"); 
+            System.out.println("Doit etre administrateur pour consulter les signalements");
         }
+    }
+
+    public Membre desactiverMembre(Membre m) {
+        if (!this.estAuthentifie) {
+            System.out.println("Authentification necessaire pour consulter les signalements");
+        } else if (getIdAdministrateur() > 0) {
+            for (Signalement s : signalements) {
+                System.out.println();
+                System.out.println("Signalement: " + s.getIdSignalement());
+                System.out.print(s.getObjet());
+                System.out.println();
+            }
+        } else {
+            m.setStatut(StatutMembre.INACTIF);
+            m.estAuthentifie = false;
+        }
+        return m;
+    }
+
+    public Annonce desactiverAnnonce(Annonce a) {
+        a.setStatut(StatutAnnonce.DESACTIVEE);
+        return a;
+    }
+
+    public Signalement desactiverSignalement(Signalement s) {
+        s.setConclusion("desactivee");
+        SiteDeLivres.signalements.remove(s);
+        return s;
     }
 
     @Override
     public String toString() {
         String resultat = "Administrateur{" + "idAdministrateur=" + idAdministrateur;
         resultat += "\nsignalments administre\n";
-        for (Signalement s : signalements){
+        for (Signalement s : signalements) {
             resultat += "\t" + s.getIdSignalement() + " " + s.getDateSignalement();
         }
-        
-        return resultat  + '}';
+
+        return resultat + '}';
     }
 
 }
