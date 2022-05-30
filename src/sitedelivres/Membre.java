@@ -73,7 +73,7 @@ public class Membre extends Utilisateur {
 
         Signalement signalement = new Signalement(new Date(), objet, null, annonce, null, annonce.getMembre());
         annonce.getSignalements().add(signalement);
-        SiteDeLivres.signalements.add(signalement);
+        //SiteDeLivres.signalements.add(signalement);
         signalements.add(signalement);
 
         annonce.getMembre().ajouterSignalement();

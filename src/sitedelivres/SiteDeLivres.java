@@ -11,6 +11,7 @@ public class SiteDeLivres {
     static Set<Signalement> signalements = new HashSet(0);
 
     public static void main(String[] args) {
+        try {
         //Tests de notre acteur membre
         Membre membre1 = new Membre(new Date(), "courrier@gman.org", "8195551234", "123 fake street Dudeswell", StatutMembre.ACTIF, "heman", "123", "Haffett", "Bob");
         Membre membre2 = new Membre(new Date(), "fatiguant@gman.org", "8195556666", "1 real street Montsureal", StatutMembre.ACTIF, "shewoman", "qwerty", "Hann", "Anne");
@@ -196,15 +197,6 @@ public class SiteDeLivres {
             System.out.println("\t" + desc);
         }
 
-        Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
-        Signalement signalement2 = membre5.signalerAnnonce(annonce1, "C'est troublant"); //Le membre non authentifié
-        Signalement signalement3 = membre3.signalerAnnonce(annonce3, "Le livre n'a plus de pages");
-
-        System.out.println("info des signalement test:");
-        System.out.println("\t" + signalement1);
-        System.out.println("\t" + signalement2); //null, le membre n'est pas authentifié
-        System.out.println("\t" + signalement3);
-
         ExperienceClient exp1 = membre3.commenterExperienceUtilisateur(5, 5, "Superbe", 5, annonce1);
         ExperienceClient exp2 = membre2.commenterExperienceUtilisateur(3, 4, "Bien", 4, annonce2);
         ExperienceClient exp3 = membre1.commenterExperienceUtilisateur(4, 5, "Passable", 5, annonce3);
@@ -224,32 +216,34 @@ public class SiteDeLivres {
         System.out.println(membre3);
         System.out.println(membre4);
         System.out.println(membre5 + "\n");
-//
-//        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs() + desc1.getLivre().getCategorie());
-//        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs() + desc2.getLivre().getCategorie() + "\n");
-//
-//        System.out.println(vet);
-//
-//        System.out.println(annonce1);
-//
-//        System.out.println(signalement1 + "\n");
-//
-//        for (ExperienceClient exp : experiencesClient) {
-//            System.out.println(exp);
-//        }
-//
-//        //Test de notre acteur Administrateur
-//        Administrateur admin1 = new Administrateur("admin001", "qwerty", "Poitra", "Robert");
-//        Administrateur admin2 = new Administrateur("admin002", "12345", "Wayne", "Bruce");
-//        Administrateur admin3 = new Administrateur("admin003", "love", "Password", "Login");
-//        Administrateur admin4 = new Administrateur("admin004", "admin", "Admin", "Admin");
-//
-//        System.out.println(admin1);
-//        System.out.println(admin2);
-//        System.out.println(admin3);
-//        System.out.println(admin4 + "\n");
+
         Administrateur admin1 = new Administrateur("admin001", "qwerty", "Poitra", "Robert");
+        Administrateur admin2 = new Administrateur("admin002", "12345", "Wayne", "Bruce");
+        Administrateur admin3 = new Administrateur("admin003", "love", "Password", "Login");
+        Administrateur admin4 = new Administrateur("admin004", "admin", "Admin", "Admin");
+        
         admin1.estAuthentifie = true;
-        admin1.consulterSignalements(signalements);
+        
+        System.out.println("Les administrateurs systeme");
+        System.out.println(admin1);
+        System.out.println(admin2);
+        System.out.println(admin3);
+        System.out.println(admin4);
+        
+        Signalement signalement1 = membre2.signalerAnnonce(annonce1, "J'aime les chiens, est insultante");
+        Signalement signalement3 = membre3.signalerAnnonce(annonce3, "Le livre n'a plus de pages");
+        
+        admin1.getSignalements().add(signalement1);
+        admin1.getSignalements().add(signalement3);
+        
+        admin1.consulterSignalements();
+        
+        System.out.println(admin1);
+        
+        } catch(Exception e){
+            System.out.println("Une erreur innatendue est survenue.");
+        }
+            
+        
     }
 }

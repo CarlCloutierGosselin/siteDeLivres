@@ -94,7 +94,7 @@ public class Administrateur extends Utilisateur {
 
         return cat;
     }
-
+    
     public Membre ajouterMembre(Membre m) {
         if (!this.estAuthentifie) {
             System.out.println("Authentification necessaire pour desactiver une categorie");
@@ -108,11 +108,11 @@ public class Administrateur extends Utilisateur {
                 m.getMotPasse(), m.getNom(), m.getPrenom());
     }
 
-    public void consulterSignalements(Set<Signalement> signalements) {
+    public void consulterSignalements() {
         if (!this.estAuthentifie) {
             System.out.println("Authentification necessaire pour consulter les signalements");
         } else if (getIdAdministrateur() > 0) {
-            for (Signalement s : signalements) {
+            for (Signalement s : this.signalements) {
                 System.out.println();
                 System.out.println("Signalement: " + s.getIdSignalement());
                 System.out.print(s.getObjet());
@@ -147,7 +147,7 @@ public class Administrateur extends Utilisateur {
 
     public Signalement desactiverSignalement(Signalement s) {
         s.setConclusion("desactivee");
-        SiteDeLivres.signalements.remove(s);
+        this.signalements.remove(s);
         return s;
     }
 
