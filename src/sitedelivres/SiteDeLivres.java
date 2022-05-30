@@ -218,12 +218,12 @@ public class SiteDeLivres {
             System.out.println("\t" + exp);
         }
 
-        System.out.println("Les membres participant au echanges");
-        System.out.println("\t" + membre1);
-        System.out.println("\t" + membre2);
-        System.out.println("\t" + membre3);
-        System.out.println("\t" + membre4);
-        System.out.println("\t" + membre5 + "\n");
+        System.out.println("Les membres participant aux echanges");
+        System.out.println(membre1);
+        System.out.println(membre2);
+        System.out.println(membre3);
+        System.out.println(membre4);
+        System.out.println(membre5 + "\n");
 //
 //        System.out.println(desc1.getAnnonce().getNoAnnonce() + " " + desc1.getLivre().getTitre() + " " + desc1.getLivre().getAuteurs() + desc1.getLivre().getCategorie());
 //        System.out.println(desc2.getAnnonce().getNoAnnonce() + " " + desc2.getLivre().getTitre() + " " + desc2.getLivre().getAuteurs() + desc2.getLivre().getCategorie() + "\n");

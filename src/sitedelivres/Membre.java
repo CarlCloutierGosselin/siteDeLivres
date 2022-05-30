@@ -74,6 +74,7 @@ public class Membre extends Utilisateur {
         Signalement signalement = new Signalement(new Date(), objet, null, annonce, null, annonce.getMembre());
         annonce.getSignalements().add(signalement);
         SiteDeLivres.signalements.add(signalement);
+        signalements.add(signalement);
 
         annonce.getMembre().ajouterSignalement();
 
@@ -243,11 +244,19 @@ public class Membre extends Utilisateur {
 
     @Override
     public String toString() {
-        return "Membre{" + "dateInscription=" + dateInscription
+        String resultat = "Membre{" + "dateInscription=" + dateInscription
                 + ", courriel=" + courriel + ", numeroTelephone=" + noTelephone
                 + ", adresse=" + adresse + ", nbSignalements=" + nbSignalements
-                + ", statut=" + statut + ", signalements=" + signalements
-                + ", annonces=" + annonces + '}';
+                + ", statut=" + statut;
+        for(Signalement s : signalements){
+            resultat += "\n\tsignalementID=" + s.getIdSignalement() + " date=" + s.getDateSignalement();
+        }
+        
+        for(Annonce a : annonces){
+            resultat += "\n\tannonceID=" + a.getNoAnnonce() + " date=" + a.getDatePublication();
+        }
+        
+        return resultat;
     }
 
 }

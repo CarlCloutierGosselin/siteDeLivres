@@ -128,9 +128,8 @@ public class Administrateur extends Utilisateur {
     @Override
     public String toString() {
         String resultat = "Administrateur{" + "idAdministrateur=" + idAdministrateur;
-        resultat += "\nsignalments administre\n";
         for (Signalement s : signalements){
-            resultat += "\t" + s.getIdSignalement() + " " + s.getDateSignalement();
+            resultat += "\n\tsignalement=" + s.getIdSignalement() + " date=" + s.getDateSignalement();
         }
         
         return resultat  + '}';
